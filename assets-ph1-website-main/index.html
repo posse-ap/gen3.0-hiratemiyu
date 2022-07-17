@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>初めてのweb製作</title>
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- class名が2個？→l:layout p:project 再利用しないページの固有パーツ-->
     <header class="l-header p-header">
-        <div class="p-header_logo">
-            <img src="./assets/img/logo.svg" alt="POSSE">
+        <div class="posselogo">
+            <img src="./img/logo.svg" alt="POSSE">
         </div>
-        <nav class="p-header_logo">
+        <nav class="p-header_nav">
+            <!-- リンク入れてない -->
             <ul class="p-header_nav_list">
-                <li class="p-header_nav_item>
-                    <a href="./" class="p-header_nav_item_link">トップページ</a>
-                    </li>
-                    <li class="p-header_nav_item">
-                        <a href="./quiz/" class="p-header_nav_item_link">クイズ</a>
-                    </li>
+                <li class="p-header_nav_item">トップページ</li>
+                <li class="p-header_nav_item">クイズ</li>
             </ul>
         </nav>
-        <ul class="p-header_sus p-sns">
+        <ul class="p-header_sns p-sns">
             <li class="p-sns_item">
-                <a href="href="https://twitter.com/posse_program"></a>
+                <!-- a要素に target="" を追加すると、リンク先の文書をどのフレーム（ウィンドウ）に表示するかを指定できます 
+                target="_blank"は違うウィンドウで開くという意味-->
+                <!-- rel="noreferrer"を設定することで、リンク先に対して参照元のリンク情報を渡さないようにすることができます。 -->
+                <!-- aria-label 属性は、現在の要素にラベル付けする文字列を定義するために使用されます。 これはテキストラベルが画面に表示されない場合に使用します。 -->
+                <a href="https://twitter.com/posse_program"  target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <img src="./img/icon/icon-twitter.svg" alt="Twitter">
+                    <!-- 「I」とはフォント（文字）をイタリック体にするためのタグで、<i>～</i>のタグで囲まれたテキストはイタリック体になります。 -->
+                <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                class="p-sns_item_link" aria-label="Instagram">
+                <img src="./img/icon/icon-instagram.svg" alt="instagram">
+                <i class="u-icon_instagram"></i>    
+                </a>
             </li>
         </ul>
     </header>
 </body>
+
 </html>

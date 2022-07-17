@@ -1,0 +1,96 @@
+/* headerの中身をどうするか、pは使いまわししない、nは使いまわす */
+.p-header{
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    padding: 15px 24px;
+}
+
+/* headerのlayout(位置)を決めている */
+.l-header{
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+/* class名1つでも良いけど、2つあると分かりやすい l,pは使い方が決まっている */
+
+/* behore after 新人ハッカソンで出てきた文字の下にライン引くやつはこれでできる */
+*, ::before, ::after {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+}
+
+.p-header_logo{
+    width: 148px;
+}
+
+img{
+    width: 100%;
+}
+
+.p-header_nav{
+    margin-left: auto;
+}
+
+.p-header_nav_list{
+    display: flex;
+    gap: 32px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns{
+    display: flex;
+    gap: 16px;
+}
+
+/* borderはHTMLの部品に枠線を引くためのcssのプロパティの一つです。
+solid	1本線
+フレックスアイテムの主軸方向の揃え位置を指定する
+justify-content フレックスアイテムの主軸方向の揃え位置を指定する
+                主軸方向の中央揃えで表示*/
+.p-sns_item_link{
+    align-items:center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+/* これいる？？？？？ */
+i{  
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    /* 通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。
+        「Arial」「Vernada」「ヒラギノ角ゴPro W3」「ＭＳ Ｐゴシック」などがフォントファミリー名です。
+       !importantは一言でいえば、合わせて使用したプロパティを最優先で使用することにする命令です。 */
+    font-family: "posse-icon" !important;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-ligatures: discretionary-ligatures;
+    font-weight: normal;
+    /* letter-spacing: 字間 */
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+}
+/* なぜtramsparent */
+a{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+
+
