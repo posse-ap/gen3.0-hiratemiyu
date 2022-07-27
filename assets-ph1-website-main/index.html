@@ -21,10 +21,14 @@
             <img src="./img/logo.svg" alt="POSSE">
         </div>
         <nav class="p-header_nav">
-            <!-- リンク入れてない -->
+            <!-- ハイパーリンクのとこ不安 -->
             <ul class="p-header_nav_list">
-                <li class="p-header_nav_item">トップページ</li>
-                <li class="p-header_nav_item">クイズ</li>
+                <li class="p-header_nav_item">
+                    <a href="./aboutposse" class="p-header_nav_item_link"> POSSEとは</a>
+                </li>
+                <li class="p-header_nav_item">
+                    <a href="./quiz" class="p-header_nav_item_link">クイズ</a>
+                </li>
             </ul>
         </nav>
         <ul class="p-header_sns p-sns">
@@ -33,22 +37,51 @@
                 target="_blank"は違うウィンドウで開くという意味-->
                 <!-- rel="noreferrer"を設定することで、リンク先に対して参照元のリンク情報を渡さないようにすることができます。 -->
                 <!-- aria-label 属性は、現在の要素にラベル付けする文字列を定義するために使用されます。 これはテキストラベルが画面に表示されない場合に使用します。 -->
-                <a href="https://twitter.com/posse_program"  target="_blank" rel="noopener noreferrer"
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
                     class="p-sns_item_link" aria-label="Twitter">
-                    <img src="./img/icon/icon-twitter.svg" alt="Twitter">
-                    <!-- 「I」とはフォント（文字）をイタリック体にするためのタグで、<i>～</i>のタグで囲まれたテキストはイタリック体になります。 -->
-                <i class="u-icon_twitter"></i>
+                    <!-- 「I」とはフォント（文字）をイタリック体にするためのタグで、<i>～</i>のタグで囲まれたテキストはイタリック体になります。
+                        <i> は HTML の要素で、何らかの理由で他のテキストと区別されるテキストの範囲を表します。　 -->
+                    <i class="u-icon_twitter"></i>
                 </a>
             </li>
-            <li class="">
+            <li class="p-sns_item">
                 <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
-                class="p-sns_item_link" aria-label="Instagram">
-                <img src="./img/icon/icon-instagram.svg" alt="instagram">
-                <i class="u-icon_instagram"></i>    
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
                 </a>
             </li>
         </ul>
     </header>
+
+    <div class="p-line">
+        <div class="l-container">
+            <div class="p-line_body">
+                <div class="p-line_body_innner">
+                    <h2 class="p-heading-light p-line_title">
+                        <i class="u-icon_line">
+                        </i>
+                        POSSE公式LINE
+                    </h2>
+                    <div class="l-content">
+                        <p>
+                            公式LINEにてご質問を随時受け付けております
+                            <br>
+                            詳細やPOSSE最新情報につきましては公式LINEにてお知らせいたしますので
+                            <br>
+                            下記ボタンより友達追加をお願いします！
+                        </p>
+                    </div>
+                    <div class="p-line_footer">
+                        <a href="https://line.me/R/ti/p/@651htnqp?from=page" target="_blank" rel="noopener noreferrer"
+                            class="p-line_button">
+                            LINE追加
+                            <i class="u-icon_link">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
