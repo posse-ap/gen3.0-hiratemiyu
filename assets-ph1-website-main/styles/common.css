@@ -319,10 +319,14 @@ a {
 }
 
 .p-line_img {
-    top: 0px;
-    width: 100%;
-    height: 100%;
-
+    position: absolute;
+    width: 984px;
+    height: 357px;
+    left: 125px;
+    right: 200px;
+    top: 750px;
+    bottom: 0.28%;
+    border-radius: 48px;
 }
 
 
@@ -413,7 +417,7 @@ a {
 /* footer */
 .p-footer {
     position: relative;
-    margin-top: 1400px;
+    margin-top: 2000px;
     border-top: 1px solid #adadad;
     width: 100%;
 
