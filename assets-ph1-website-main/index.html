@@ -18,13 +18,13 @@
     <!-- class名が2個？→l:layout p:project 再利用しないページの固有パーツ-->
     <header class="l-header p-header">
         <div class="posselogo">
-            <img src="./img/logo.svg" alt="POSSE">
+            <img class="POSSElogo" src="./img/logo.svg" alt="POSSE">
         </div>
         <nav class="p-header_nav">
             <!-- ハイパーリンクのとこ不安 -->
             <ul class="p-header_nav_list">
                 <li class="p-header_nav_item">
-                    <a href="./aboutposse" class="p-header_nav_item_link"> POSSEとは</a>
+                    <a href="#aboutposse" class="p-header_nav_item_link"> POSSEとは</a>
                 </li>
                 <li class="p-header_nav_item">
                     <a href="./quiz" class="p-header_nav_item_link">クイズ</a>
@@ -53,35 +53,110 @@
         </ul>
     </header>
 
-    <div class="p-line">
-        <div class="l-container">
-            <div class="p-line_body">
-                <div class="p-line_body_innner">
-                    <h2 class="p-heading-light p-line_title">
-                        <i class="u-icon_line">
-                        </i>
-                        POSSE公式LINE
-                    </h2>
-                    <div class="l-content">
-                        <p>
-                            公式LINEにてご質問を随時受け付けております
-                            <br>
-                            詳細やPOSSE最新情報につきましては公式LINEにてお知らせいたしますので
-                            <br>
-                            下記ボタンより友達追加をお願いします！
-                        </p>
-                    </div>
-                    <div class="p-line_footer">
-                        <a href="https://line.me/R/ti/p/@651htnqp?from=page" target="_blank" rel="noopener noreferrer"
-                            class="p-line_button">
-                            LINE追加
-                            <i class="u-icon_link">
-                            </i>
-                        </a>
-                    </div>
+    <div class="p-top">
+        <div class="p-top_img">
+            <img class="p-top_img" src="./img/img-hero.jpg" alt="p-top_img">
+        </div>
+        <div class="p-top_slogan">
+            <p class="p-top_slogan_title">
+                学生プログラミングコミュニティPOSSE(ポッセ)
+            </p>
+            <p class="p-top_slogan_text">自分史上最高
+                <br>を仲間と
+            </p>
+        </div>
+        <div class="scrolldown">
+            ・scrolldown
+        </div>
+    </div>
+
+    <div class="p-about" id="aboutposse">
+        <div class="p-about_title">
+            POSSEとは
+        </div>
+        <div class="p-aboutEN">
+            AboutPOSSE
+        </div>
+        <div class="p-about_img">
+            <img class="p-about_img" src="./img/img-about.jpg" alt="p-about">
+        </div>
+        <div class="p-about_text">
+            <p>
+                学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラ
+                <br> ミング、二つの面での成長をスローガンに活動しており、大学生だけが集
+                <br> まって学びを深めるコミュニティです。
+                <br> プログラミングだけではありません。オフラインでのイベントや、旅行な
+                <br> ど様々な企画を行っています！
+                <br> それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさ
+                <br> んいるほどメンバーとの仲が深まります。
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <div class="p-line_img">
+            <img class="p-line_img" src="./img/bg-line.jpg" alt="LINEimg">
+        </div>
+        <div class="p-line_cover">
+            <div class="p-line_icon">
+                <img src="./img/icon/icon-line.svg" alt="LINEicon">
+            </div>
+            <div class="p-line_title">
+                <h2>POSSE 公式LINE</h2>
+            </div>
+            <div class="p-line_content">
+                <p> 公式LINEにてご質問を随時受け付けております
+                    <br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせいたしますので
+                    <br>下記ボタンより友達追加をお願いします
+                </p>
+            </div>
+            <div class="p-line_button_frame">
+                <div class="p-line_button_message">
+                    <p>LINE追加</p>
                 </div>
             </div>
         </div>
-</body>
+    </div>
 
+    <footer>
+        <div class="p-footer">
+            <div class="p-footer_logo">
+            <img src="./img/logo.svg" alt="p-logo">
+            </div>
+            <div class="p-footer_official">
+            <p class="p-footer_official_text">POSSE公式サイト</p>
+            </div>
+            <ul class="p-footer_sns p-sns">
+            <li class="p-sns_item">
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="p-sns_item">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
+                </a>
+            </li>
+            </ul>
+            <div class="p-copyright">
+                <p class="p-copyright_text">
+                    @2022 POSSE
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="p-banner">
+        <div class="p-banner_icon">
+            <img src="./img/icon/icon-line.svg" alt="LINE">
+        </div>
+        <p class="p-banner_text">
+            POSSE公式LINEで
+            <br>最新情報をGET!
+        </p>
+    </div>
+
+</body>
 </html>
