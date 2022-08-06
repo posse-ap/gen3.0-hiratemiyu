@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="stylesheet" href="./styles/quiz.css">
+    <link rel="stylesheet" href="./styles/font.css">
+</head>
+
+<body>
+    <header class="l-header p-header">
+        <div class="posselogo">
+            <img class="POSSElogo" src="./img/logo.svg" alt="POSSE">
+        </div>
+        <nav class="p-header_nav">
+            <!-- ハイパーリンクのとこ不安 -->
+            <ul class="p-header_nav_list">
+                <li class="p-header_nav_item">
+                    <a href="#aboutposse" class="p-header_nav_item_link"> POSSEとは</a>
+                </li>
+                <li class="p-header_nav_item">
+                    <a href="./quiz" class="p-header_nav_item_link">クイズ</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="p-header_sns p-sns">
+            <li class="p-sns_item">
+                <!-- a要素に target="" を追加すると、リンク先の文書をどのフレーム（ウィンドウ）に表示するかを指定できます 
+                target="_blank"は違うウィンドウで開くという意味-->
+                <!-- rel="noreferrer"を設定することで、リンク先に対して参照元のリンク情報を渡さないようにすることができます。 -->
+                <!-- aria-label 属性は、現在の要素にラベル付けする文字列を定義するために使用されます。 これはテキストラベルが画面に表示されない場合に使用します。 -->
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <!-- 「I」とはフォント（文字）をイタリック体にするためのタグで、<i>～</i>のタグで囲まれたテキストはイタリック体になります。
+                        <i> は HTML の要素で、何らかの理由で他のテキストと区別されるテキストの範囲を表します。　 -->
+                    <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="p-sns_item">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="quiz-top">
+        <div class="quiz-top_subtitle">POSSE課題</div>
+        <div class="quiz-top_title">ITクイズ</div>
+        <img  class="quiz-top_img" src="./img/quiz/bg-hero.jpg" alt="quiz-top_cover">
+    </div>
+
+    <div class="quiz-questions">
+        <div class="quiz-question1-subheading">
+            <h2 class="Q1">Q1</h2>
+        </div>
+            <p class="quiz-question1">
+                日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか
+            </p>
+            <img class="quiz-question1_img" src="./img/quiz/img-quiz01.png" alt="Q1_img">
+        <div class="quiz-answer1_subheading"></div>
+            <div class="quiz-answer1_choices">   
+                <div class="quiz-answer1_choice1">
+                    <p class="quiz-answer1_choice_text">約28万人</p> 
+                </div>
+                <div class="quiz-answer1_choice2">
+                    <p class="quiz-answer1_choice_text">約79万人</p>
+                </div>
+                <div class="quiz-answer1_choice3">
+                    <p class="quiz-answer1_choice_text">約183万人</p>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+</body>
+
+</html>
