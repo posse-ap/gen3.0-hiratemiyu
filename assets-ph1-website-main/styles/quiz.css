@@ -1,0 +1,337 @@
+/* headerの中身をどうするか、pは使いまわししない、nは使いまわす */
+.p-header {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    padding: 15px 24px;
+
+}
+
+/* headerのlayout(位置)を決めている */
+.l-header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/* class名1つでも良いけど、2つあると分かりやすい l,pは使い方が決まっている */
+
+/* behore after 新人ハッカソンで出てきた文字の下にライン引くやつはこれでできる */
+*,
+::before,
+::after {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+}
+
+.p-header_logo {
+    width: 148px;
+}
+
+.POSSElogo {
+    max-width: 100%;
+}
+
+.p-header_nav {
+    margin-left: auto;
+}
+
+.p-header_nav_list {
+    display: flex;
+    gap: 32px;
+}
+
+.p-header_nav_item_link {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-header_sns {
+    margin-left: 32px;
+}
+
+/* borderはHTMLの部品に枠線を引くためのcssのプロパティの一つです。
+solid	1本線
+フレックスアイテムの主軸方向の揃え位置を指定する
+justify-content フレックスアイテムの主軸方向の揃え位置を指定する
+                主軸方向の中央揃えで表示*/
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+/* これいる？？？？？ */
+i {
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    /* 通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。
+        「Arial」「Vernada」「ヒラギノ角ゴPro W3」「ＭＳ Ｐゴシック」などがフォントファミリー名です。
+       !importantは一言でいえば、合わせて使用したプロパティを最優先で使用することにする命令です。 */
+    font-family: "posse-icon" !important;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-ligatures: discretionary-ligatures;
+    font-weight: normal;
+    /* letter-spacing: 字間 */
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+}
+
+/* なぜtramsparent */
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* beforeで要素を前に出すことで見えるようにする */
+.u-icon_twitter::before {
+    content: "\ea96";
+}
+
+.u-icon_instagram::before {
+    content: "\ea92";
+}
+
+
+/* quiz-top */
+
+
+.quiz-top {
+    /* shadow */
+    position: absolute;
+    width: 100%;
+    height: 160px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.quiz-top_img {
+    margin-top: 70px;
+    width: 100%;
+    height: 350px;
+}
+
+.quiz-top_subtitle {
+    position: absolute;
+    width: 119px;
+    height: 32px;
+    left: 220px;
+    top: 190px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 180%;
+    color: #EFF2F5;
+}
+
+.quiz-top_title {
+    position: absolute;
+    width: 435px;
+    height: 90px;
+    left: 220px;
+    top: 230px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+
+/* questions */
+
+.quiz-question1-subheading {
+
+    /* Auto layout */
+    position: absolute;
+    top: 500px;
+    left: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: absolute;
+    width: 85px;
+    height: 70px;
+
+    /* primary */
+    background: #0071BC;
+    border-radius: 8px;
+}
+
+.Q1 {
+    /* Q 1 */
+    position: absolute;
+
+    width: 53px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-question1 {
+    /* 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？ */
+
+
+    position: absolute;
+    width: 984px;
+    height: 108px;
+    left: calc(50% - 984px/2);
+    margin-top: 550px;
+    margin-left: 30px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    text-align: justify;
+
+    /* BK */
+
+    color: #333333;
+}
+
+.quiz-question1_img {
+    position: absolute;
+    margin-top: 700px;
+    margin-left: 200px;
+    width: 50%;
+}
+
+
+.quiz-answer1_choices {
+    position: absolute;
+    top: 1100px;
+    left: 200px;
+    display: flex;
+    gap: 30px;
+}
+
+.quiz-answer1_choice1,
+.quiz-answer1_choice2,
+.quiz-answer1_choice3 {
+    /* Question */
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    gap: 8px;
+    width: 312px;
+    height: 80px;
+
+    /* White */
+    background: #FFFFFF;
+
+    /* line */
+    border: 5px solid #EEEEEE;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer1_choice_text {
+    /* 約28万人 */
+
+
+    width: 240px;
+    height: 32px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+
+    /* BK */
+
+    color: #333333;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer1_subheading {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: absolute;
+    width: 58px;
+    height: 70px;
+    left: 0px;
+    top: 687px;
+
+    /* red */
+
+    background: #E34E70;
+    border-radius: 8px;
+}
