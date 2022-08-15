@@ -4,7 +4,6 @@
     background-color: #fff;
     display: flex;
     padding: 15px 24px;
-
 }
 
 /* headerのlayout(位置)を決めている */
@@ -119,22 +118,28 @@ a {
 
 
 /* quiz-top */
-
+.p-quiz_container {
+    width: 1000px;
+    margin: 0 auto;
+}
 
 .quiz-top {
     /* shadow */
-    position: absolute;
+    /* position: absolute;
     width: 100%;
     height: 160px;
     left: 0px;
     top: 0px;
 
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%); */
+    width: 100%;
+    height: 160px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
 }
 
 .quiz-top_img {
     margin-top: 70px;
-    width: 100%;
     height: 350px;
 }
 
@@ -142,8 +147,8 @@ a {
     position: absolute;
     width: 119px;
     height: 32px;
-    left: 220px;
-    top: 190px;
+    margin-top: -230px;
+    margin-left: 210px;
     font-family: 'Noto Sans JP';
     font-style: normal;
     font-weight: 700;
@@ -166,15 +171,9 @@ a {
     color: #FFFFFF;
 }
 
-
-/* questions */
-
 .quiz-question1-subheading {
-
     /* Auto layout */
-    position: absolute;
-    top: 500px;
-    left: 100px;
+    margin-top: -90px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -219,22 +218,19 @@ a {
     flex-grow: 0;
 }
 
-.quiz-question1 {
+.quiz-question1_text
+ {
     /* 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？ */
-
-
-    position: absolute;
     width: 984px;
     height: 108px;
     left: calc(50% - 984px/2);
-    margin-top: 550px;
-    margin-left: 30px;
+    margin-top: 480px;
 
     font-family: 'Noto Sans JP';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
-    line-height: 150%;
+    line-height: 170%;
     /* or 54px */
 
     text-align: justify;
@@ -245,17 +241,60 @@ a {
 }
 
 .quiz-question1_img {
-    position: absolute;
-    margin-top: 700px;
-    margin-left: 200px;
-    width: 50%;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 75%;
 }
 
+.quiz-answer1_subheading {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+
+    width: 58px;
+    height: 80px;
+    left: 60px;
+    margin-top: 70px;
+
+    /* red */
+
+    background: #E34E70;
+    border-radius: 8px;
+}
+
+.question1-A {
+    width: 26px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
 
 .quiz-answer1_choices {
-    position: absolute;
-    top: 1100px;
-    left: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
     display: flex;
     gap: 30px;
 }
@@ -290,8 +329,6 @@ a {
 
 .quiz-answer1_choice_text {
     /* 約28万人 */
-
-
     width: 240px;
     height: 32px;
 
@@ -315,9 +352,86 @@ a {
     flex-grow: 0;
 }
 
-.quiz-answer1_subheading {
-    /* Auto layout */
+/* .Q1_correctbox{
+    position: absolute;
+    border: #333333;
+    width: 300px;
+    height: 200px ;
+    margin-top: 150px;
+    /* Rectangle 17 */
+/* red-bg */
 
+/* background: #FFF2F5;
+border-radius: 8px;
+}  */
+
+.quiz-question1_copyright,
+.quiz-question5_copyright,
+.quiz-question6_copyright {
+    /* Rectangle */
+    position: relative;
+    width: 984px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 45px;
+    /* background-bg */
+
+    background: #F6F6F6;
+    border-radius: 8px;
+}
+
+
+.quiz-question1_copyright_text,
+.quiz-question5_copyright_text
+ {
+    /* 経済産業省 2019年3月 － IT 人材需給に関する調査 */
+    position: absolute;
+    width: 411px;
+    height: 32px;
+    left: 64px;
+    top: 5px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+}
+
+.quiz-question6_copyright_text{
+    position: absolute;
+    width: 411px;
+    height: 32px;
+    left: 64px;
+    top: 20px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+}
+
+
+
+/* Q2 */
+
+.quiz-question2-subheading,
+.quiz-question3-subheading,
+.quiz-question4-subheading,
+.quiz-question5-subheading,
+.quiz-question6-subheading
+ {
+    /* Auto layout */
+    margin-top: -100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -325,13 +439,228 @@ a {
     gap: 8px;
 
     position: absolute;
-    width: 58px;
+    width: 85px;
     height: 70px;
-    left: 0px;
-    top: 687px;
+
+    /* primary */
+    background: #0071BC;
+    border-radius: 8px;
+}
+
+.Q2,
+.Q3,
+.Q4,
+.Q5,
+.Q6 {
+    /* Q 2 */
+
+    width: 53px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-question2_text,
+.quiz-question3_text,
+.quiz-question4_text,
+.quiz-question5_text,
+.quiz-question6_text
+ {
+    /* 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？ */
+    width: 984px;
+    height: 108px;
+    left: calc(50% - 984px/2);
+    margin-top: 250px;
+    margin-left: 30px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    text-align: justify;
+
+    /* BK */
+
+    color: #333333;
+}
+
+.quiz-question2_img,
+.quiz-question3_img,
+.quiz-question4_img,
+.quiz-question5_img,
+.quiz-question6_img  {
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 75%;
+}
+
+.quiz-answer2_subheading,
+.quiz-answer3_subheading,
+.quiz-answer4_subheading,
+.quiz-answer5_subheading,
+.quiz-answer6_subheading {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: relative;
+    width: 58px;
+    height: 80px;
+    margin-top: 10px;
 
     /* red */
 
     background: #E34E70;
     border-radius: 8px;
 }
+
+.question2-A,
+.question3-A,
+.question4-A,
+.question5-A,
+.question6-A {
+    width: 26px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.quiz-answer2_choices,
+.quiz-answer3_choices,
+.quiz-answer4_choices,
+.quiz-answer5_choices,
+.quiz-answer6_choices {
+    margin-top: 20px;
+    margin-left: 0px;
+    display: flex;
+    gap: 30px;
+}
+
+.quiz-answer2_choice1,
+.quiz-answer2_choice2,
+.quiz-answer2_choice3,
+.quiz-answer3_choice1,
+.quiz-answer3_choice2,
+.quiz-answer3_choice3,
+.quiz-answer4_choice1,
+.quiz-answer4_choice2,
+.quiz-answer4_choice3,
+.quiz-answer5_choice1,
+.quiz-answer5_choice2,
+.quiz-answer5_choice3,
+.quiz-answer6_choice1,
+.quiz-answer6_choice2,
+.quiz-answer6_choice3
+ {
+    /* Question */
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    gap: 8px;
+    width: 330px;
+    height: 80px;
+
+    /* White */
+    background: #FFFFFF;
+
+    /* line */
+    border: 5px solid #EEEEEE;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer2_choice_text,
+.quiz-answer3_choice_text,
+.quiz-answer4_choice_text,
+.quiz-answer5_choice_text,
+.quiz-answer6_choice_text {
+    /* 約28万人 */
+
+
+    width: 250px;
+    height: 32px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer2_correct {
+    /* Rectangle 17 */
+    position: absolute;
+    width: 984px;
+    height: 143px;
+    left: 350px;
+    top: 1350px;
+
+    /* red-bg */
+
+    background: #FFF2F5;
+    border-radius: 8px;
+}
+
+
