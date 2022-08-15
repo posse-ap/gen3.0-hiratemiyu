@@ -312,9 +312,8 @@ a {
     top: 1500px;
     bottom: 0.28%;
     /* primary */
-    background: #0071BC;
+    background: rgba(0,113,188,0.8) ;
     mix-blend-mode: normal;
-    opacity: 0.8;
     border-radius: 48px;
 }
 
@@ -334,13 +333,23 @@ a {
     position: absolute;
     width: 40px;
     height: 40px;
-    left: 150px;
+    left: 0px;
     right: 62.7%;
-    top: 70px;
+    top: -3px;
     bottom: 66.2%;
-    background: url(LINE_Brand_icon);
+
+}
+
+.p-line_icon_back{
+    position: relative;
+    width: 40px;
+    height: 38px;
+    left: 160px;
+    right: 62.7%;
+    top: 90px;
+    bottom: 66.2%;
     background-color: #fff;
-    
+    border-radius: 50%;
 }
 
 .p-line_title {
@@ -503,10 +512,22 @@ ul {
     height: 80px;
     right: 16px;
     bottom: 16px;
-
     background: #5FDF5B;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
     border-radius: 16px;
+}
+
+
+.p-banner_icon_back{
+    position: relative;
+    bottom: 60px;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    
 }
 
 .p-banner_icon {
@@ -515,12 +536,8 @@ ul {
     bottom: 60px;
     width: 36px;
     height: 36px;
-    left: 24px;
-    top: 22px;
-
-    background: url(LINE_Brand_icon);
-    background-color: #fff;
-    background-size: 2px  ;
+    left: 0px;
+    top: -8px;
     
 }
 

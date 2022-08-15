@@ -8,6 +8,7 @@
     <title>quiz</title>
     <link rel="stylesheet" href="./styles/quiz.css">
     <link rel="stylesheet" href="./styles/font.css">
+    <script src="./js/quiz.js"></script>
 </head>
 
 <body>
@@ -48,35 +49,213 @@
         </ul>
     </header>
 
+
     <div class="quiz-top">
+        <img class="quiz-top_img" src="./img/quiz/bg-hero.jpg" alt="quiz-top_cover">
         <div class="quiz-top_subtitle">POSSE課題</div>
         <div class="quiz-top_title">ITクイズ</div>
-        <img  class="quiz-top_img" src="./img/quiz/bg-hero.jpg" alt="quiz-top_cover">
     </div>
 
-    <div class="quiz-questions">
-        <div class="quiz-question1-subheading">
-            <h2 class="Q1">Q1</h2>
-        </div>
-            <p class="quiz-question1">
+    <div class="p-quiz_container">
+        <div class="quiz-question1">
+            <div class="quiz-question1-subheading">
+                <h2 class="Q1">Q1</h2>
+            </div>
+            <div class="quiz-question1_text">
                 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか
-            </p>
+            </div>
             <img class="quiz-question1_img" src="./img/quiz/img-quiz01.png" alt="Q1_img">
-        <div class="quiz-answer1_subheading"></div>
-            <div class="quiz-answer1_choices">   
-                <div class="quiz-answer1_choice1">
-                    <p class="quiz-answer1_choice_text">約28万人</p> 
-                </div>
-                <div class="quiz-answer1_choice2">
+            <div class="quiz-answer1_subheading">
+                <p class="question1-A">A</p>
+            </div>
+            <div class="quiz-answer1_choices">
+                <span onClick="openClose()" class="quiz-answer1_choice1">
+                    <p class="quiz-answer1_choice_text">約28万人</p>
+                    <i class="u-icon__arrow"></i>
+                </span>
+                <span class="quiz-answer1_choice2">
                     <p class="quiz-answer1_choice_text">約79万人</p>
-                </div>
-                <div class="quiz-answer1_choice3">
+                    <i class="u-icon__arrow"></i>
+                </span>
+                <span class="quiz-answer1_choice3">
                     <p class="quiz-answer1_choice_text">約183万人</p>
+                    <i class="u-icon__arrow"></i>
+                </span>
+            </div>
+
+
+            <!-- <div class="Q1_correctbox">
+                <p class="quiz-answer1_correct_text">
+                    正解！
+                </p>
+            </div> -->
+            <div class="quiz-question1_copyright">
+                <p class="quiz-question1_copyright_text"> 経済産業省2019年3月ーIT人材需給に関する調査
+                </p>
+            </div>
+        </div>
+
+        <div class="quiz-question2">
+            <div class="quiz-question2-subheading">
+                <h2 class="Q2">Q2</h2>
+            </div>
+            <div class="quiz-question2_text">
+                既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？
+            </div>
+            <img class="quiz-question2_img" src="./img/quiz/img-quiz02.png" alt="Q2_img">
+            <div class="quiz-answer2_subheading">
+                <p class="question2-A">A</p>
+            </div>
+            <div class="quiz-answer2_choices">
+                <div class="quiz-answer2_choice1">
+                    <span class="quiz-answer2_choice_text" id="Q2_correct">INTECH</span>
+                    <i class="u-icon__arrow"></i>
                 </div>
-            </div> 
+                <div class="quiz-answer2_choice2">
+                    <span class="quiz-answer1_choice_text">BIZZTECH</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer2_choice3">
+                    <span class="quiz-answer1_choice_text">X-TECH</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- <div class="quiz-answer2_correct" hidden id="Q2_correctbox">
+                                <p class="quiz-answer2_correct_text">
+                                正解！ -->
+            <!-- </p> -->
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question3-subheading">
+                <h2 class="Q3">Q3</h2>
+            </div>
+            <div class="quiz-question3_text">
+                IoTとは何の略でしょう？
+            </div>
+            <img class="quiz-question3_img" src="./img/quiz/img-quiz03.png" alt="Q3_img">
+            <div class="quiz-answer3_subheading">
+                <p class="question3-A">A</p>
+            </div>
+            <div class="quiz-answer3_choices">
+                <div class="quiz-answer3_choice1">
+                    <span class="quiz-answer3_choice_text" id="Q1_correct">Internet of things</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer3_choice2">
+                    <span class="quiz-answer3_choice_text">Integrate into Technology</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer3_choice3">
+                    <span class="quiz-answer3_choice_text">Information on Tool</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- <div class="quiz-answer3_correct" hidden id="Q2_correctbox">
+                    <p class="quiz-answer3_correct_text">
+                        正解！
+                    </p> -->
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question4-subheading">
+                <h2 class="Q4">Q4</h2>
+            </div>
+            <div class="quiz-question4_text">
+                日本が目指すサイバー空間とフィジカル空間を高度に融合させたシステムによって開かれる未来社会のことをなんと言うでしょうか？
+            </div>
+            <img class="quiz-question4_img" src="./img/quiz/img-quiz04.png" alt="Q3_img">
+            <div class="quiz-answer4_subheading">
+                <p class="question4-A">A</p>
+            </div>
+            <div class="quiz-answer4_choices">
+                <div class="quiz-answer4_choice1">
+                    <span class="quiz-answer4_choice_text" id="Q1_correct">Society 5.0</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer4_choice2">
+                    <span class="quiz-answer4_choice_text">CyPhy</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer4_choice3">
+                    <span class="quiz-answer3_choice_text">SDGs</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <div class="quiz-question4_copyright">
+                <p class="quiz-question1_copyright_text"> Society5.0-科学技術-内閣府
+                </p>
+            </div>
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question5-subheading">
+                <h2 class="Q5">Q5</h2>
+            </div>
+            <div class="quiz-question5_text">
+                イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分数型インターネット」のことをなんと言うでしょう？
+            </div>
+            <img class="quiz-question5_img" src="./img/quiz/img-quiz05.png" alt="Q5_img">
+            <div class="quiz-answer5_subheading">
+                <p class="question5-A">A</p>
+            </div>
+            <div class="quiz-answer5_choices">
+                <div class="quiz-answer5_choice1">
+                    <span class="quiz-answer5_choice_text" id="Q1_correct">Web 3.0</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer5_choice2">
+                    <span class="quiz-answer5_choice_text">NFT</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer5_choice3">
+                    <span class="quiz-answer5_choice_text">メタバース</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- <div class="quiz-answer5_correct" hidden id="Q5_correctbox">
+                            <p class="quiz-answer5_correct_text">
+                                正解！
+                            </p>
+                        </div> -->
+            <div class="quiz-question5_copyright">
+                <p class="quiz-question5_copyright_text"> Society5.0-科学技術-内閣府
+                </p>
+            </div>
+
+            <div class="quiz-questions">
+                <div class="quiz-question6-subheading">
+                    <h2 class="Q6">Q6</h2>
+                </div>
+                <div class="quiz-question6_text">
+                    先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？
+                </div>
+                <img class="quiz-question6_img" src="./img/quiz/img-quiz06.png" alt="Q6_img">
+                <div class="quiz-answer6_subheading">
+                    <span class="question6-A">A</span>
+                </div>
+                <div class="quiz-answer6_choices">
+                    <div class="quiz-answer6_choice1">
+                        <span class="quiz-answer6_choice_text" id="Q6_correct">約2倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                    <div class="quiz-answer6_choice2">
+                        <span class="quiz-answer6_choice_text">約5倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                    <div class="quiz-answer6_choice3">
+                        <span class="quiz-answer6_choice_text">約11倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                </div>
+                <div class="quiz-question6_copyright">
+                    <span class="quiz-question6_copyright_text"> Accenture Technology Vision 2021
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
-
+    
 </body>
 
 </html>
