@@ -294,7 +294,7 @@ a {
 
 .quiz-answer1_choices {
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 0px;
     display: flex;
     gap: 30px;
 }
@@ -373,7 +373,7 @@ border-radius: 8px;
     width: 984px;
     height: 80px;
     margin-top: 20px;
-    margin-left: 45px;
+    margin-left: 0px;
     /* background-bg */
 
     background: #F6F6F6;
@@ -620,7 +620,11 @@ border-radius: 8px;
     flex: none;
     order: 0;
     flex-grow: 0;
+
+    cursor: pointer;
 }
+
+
 
 .quiz-answer2_choice_text,
 .quiz-answer3_choice_text,
@@ -649,18 +653,351 @@ border-radius: 8px;
     flex-grow: 0;
 }
 
-.quiz-answer2_correct {
-    /* Rectangle 17 */
-    position: absolute;
-    width: 984px;
-    height: 143px;
-    left: 350px;
-    top: 1350px;
+/* correctbox */
 
-    /* red-bg */
-
-    background: #FFF2F5;
+.correctbox,
+.incorrectbox{
+    display: block;
+    background-color: #fff2f5;
     border-radius: 8px;
+    margin-top: 16px;
+    padding: 12px 60px;
+    height: 130px;
+}
+
+.incorrectbox{
+    display: block;
+    background-color: #eff2f5;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 12px 60px;
+    height: 130px;
+}
+
+.correctbox_title{
+    color: #e34e70;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 0;
+}
+
+.incorrectbox_title{
+    color: #0071bc;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 0;
+}
+
+.correctbox_content{
+        align-items: baseline;
+        display: flex;
+        font-size: 18px;
+        font-weight: bold;
+        gap: 18px;
+        line-height: 0;
+}
+
+.correctbox_label{
+    font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+    font-size: 24px;
+}
+
+.correctbox_text{
+    align-items: baseline;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 18px;
+    line-height: 1.8;
+    margin-top: 16px;
+}
+
+.correctbox,
+.incorrectbox{
+    display: none;
+}
+
+.is-selected{
+    display: block;
+}
+
+.another_is-selected{
+    pointer-events: none;
+}
+/* .is-wrongselected{
+    display: block;
+} */
+
+.is-clicked{
+    background-color: #eff2f5;
+    border-color: #0071bc;
+}
+
+/* p-line */
+
+.p-line_cover {
+    /* Rectangle 9 */
+    position: absolute;
+    margin-top: -365px;
+    width: 984px;
+    height: 357px;
+    /* primary */
+    background: rgba(0,113,188,0.8) ;
+    mix-blend-mode: normal;
+    border-radius: 48px;
+}
+
+.p-line_img {
+    position: relative;
+    width: 984px;
+    height: 357px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 0.28%;
+    border-radius: 48px;
 }
 
 
+.p-line_icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    right: 62.7%;
+    top: -3px;
+    bottom: 66.2%;
+
+}
+
+.p-line_icon_back{
+    position: relative;
+    width: 40px;
+    height: 38px;
+    left: 160px;
+    right: 62.7%;
+    top: 90px;
+    bottom: 66.2%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.p-line_title {
+    position: relative;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 180%;
+    /* identical to box height, or 65px */
+
+    text-align: center;
+
+    /* light */
+
+    color: #FFFFFF;
+}
+
+
+.p-line_content {
+    position: absolute;
+    left: 22.87%;
+    right: 22.76%;
+    top: 41.62%;
+    bottom: 39.94%;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* /* or 22px * */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* /* light * */
+    color: #FFFFFF;
+}
+
+
+.p-line_button_frame {
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: 300px;
+    top: 270px;
+
+    /* light */
+    background: #FFFFFF;
+    border-radius: 98px;
+}
+
+.p-line_button_message {
+    position: absolute;
+    width: 77px;
+    height: 23.39px;
+    left: 120px;
+    top: 13.9px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    /* /* gray-dark  */
+    color: #666666;
+}
+
+
+/* footer */
+.p-footer {
+    position: relative;
+    margin-top: 300px;
+    border-top: 1px solid #adadad;
+    width: 100%;
+
+}
+
+.p-footer_logo {
+    margin-top: 40px;
+    margin-left: 600px;
+
+}
+
+.p-footer_official {
+    position: relative;
+    margin-top: 10px;
+    margin-left: -1600px;
+    /* POSSE 公式サイト */
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    text-align: center;
+
+    /* gray-dark */
+
+    color: #666666;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-footer_sns {
+    margin-left: 610px;
+    margin-top: -20px;
+}
+
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+.p-copyright {
+    width: 100%;
+    margin-top: 35px;
+    margin-left: -50px;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 13px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* gray-dark */
+
+    color: #666666;
+    border-top: 1px solid #adadad;
+}
+
+/* banner */
+.p-banner {
+    position: fixed;
+    width: 288px;
+    height: 80px;
+    right: 16px;
+    bottom: 16px;
+    background: #5FDF5B;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+
+.p-banner_icon_back{
+    position: relative;
+    bottom: 60px;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    
+}
+
+.p-banner_icon {
+    /* icon-line */
+    position: absolute;
+    bottom: 60px;
+    width: 36px;
+    height: 36px;
+    left: 0px;
+    top: -8px;
+    
+}
+
+.p-banner_text {
+    position:absolute ;
+    width: 160px;
+    height: 50px;
+    left: 90px;
+    top: 11px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    /* or 18px */
+
+    letter-spacing: 0.14em;
+
+    color: #FFFFFF;
+}
+
+
+.u-icob_link::before{
+    content: "\e901";
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-left: 35px;
+}
