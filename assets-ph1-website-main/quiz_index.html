@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz</title>
+    <title>ITクイズ</title>
     <link rel="stylesheet" href="./styles/quiz.css">
     <link rel="stylesheet" href="./styles/font.css">
-    <script src="./js/quiz.js"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
             <!-- ハイパーリンクのとこ不安 -->
             <ul class="p-header_nav_list">
                 <li class="p-header_nav_item">
-                    <a href="#aboutposse" class="p-header_nav_item_link"> POSSEとは</a>
+                    <a href="#aboutposse" class="p-header_nav_item_link">POSSEとは</a>
                 </li>
                 <li class="p-header_nav_item">
                     <a href="./quiz" class="p-header_nav_item_link">クイズ</a>
@@ -48,8 +47,7 @@
             </li>
         </ul>
     </header>
-
-
+    
     <div class="quiz-top">
         <img class="quiz-top_img" src="./img/quiz/bg-hero.jpg" alt="quiz-top_cover">
         <div class="quiz-top_subtitle">POSSE課題</div>
@@ -65,30 +63,42 @@
                 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか
             </div>
             <img class="quiz-question1_img" src="./img/quiz/img-quiz01.png" alt="Q1_img">
-            <div class="quiz-answer1_subheading">
-                <p class="question1-A">A</p>
+            <div  class="quiz-answer1_subheading">
+                <p  class="question1-A">A</p>
             </div>
-            <div class="quiz-answer1_choices">
-                <span onClick="openClose()" class="quiz-answer1_choice1">
-                    <p class="quiz-answer1_choice_text">約28万人</p>
+            <div  class="quiz-answer1_choices" id="Q1_choices" >
+                <span class="quiz-answer1_choice1" id="Q1_incorrect_1">
+                    <p  class="quiz-answer1_choice_text">約28万人</p>
                     <i class="u-icon__arrow"></i>
                 </span>
-                <span class="quiz-answer1_choice2">
-                    <p class="quiz-answer1_choice_text">約79万人</p>
+                <span class="quiz-answer1_choice2" id="Q1_correct">
+                    <p  class="quiz-answer1_choice_text">約79万人</p>
                     <i class="u-icon__arrow"></i>
                 </span>
-                <span class="quiz-answer1_choice3">
+                <span class="quiz-answer1_choice3" id="Q1_incorrect_2">
                     <p class="quiz-answer1_choice_text">約183万人</p>
                     <i class="u-icon__arrow"></i>
                 </span>
             </div>
 
-
-            <!-- <div class="Q1_correctbox">
-                <p class="quiz-answer1_correct_text">
+            <div class="correctbox" id="correctbox" >
+                <p class="correctbox_title">
                     正解！
                 </p>
-            </div> -->
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A </p>
+                    <p class="correctbox_text">約79万人</p>
+                </div>
+            </div> 
+
+            <div class="incorrectbox" id="incorrectbox">
+                <p class="incorrectbox_title">不正解...</p>
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A</p>
+                    <p class="correctbox_text">約79万人</p>
+                </div>
+            </div>
+
             <div class="quiz-question1_copyright">
                 <p class="quiz-question1_copyright_text"> 経済産業省2019年3月ーIT人材需給に関する調査
                 </p>
@@ -108,22 +118,28 @@
             </div>
             <div class="quiz-answer2_choices">
                 <div class="quiz-answer2_choice1">
-                    <span class="quiz-answer2_choice_text" id="Q2_correct">INTECH</span>
+                    <span class="quiz-answer2_choice_text" id="Q2_incorrect">INTECH</span>
                     <i class="u-icon__arrow"></i>
                 </div>
                 <div class="quiz-answer2_choice2">
-                    <span class="quiz-answer1_choice_text">BIZZTECH</span>
+                    <span class="quiz-answer1_choice_text" id="Q2_incorrect">BIZZTECH</span>
                     <i class="u-icon__arrow"></i>
                 </div>
                 <div class="quiz-answer2_choice3">
-                    <span class="quiz-answer1_choice_text">X-TECH</span>
+                    <span class="quiz-answer1_choice_text" id="Q2_correct">X-TECH</span>
                     <i class="u-icon__arrow"></i>
                 </div>
             </div>
-            <!-- <div class="quiz-answer2_correct" hidden id="Q2_correctbox">
-                                <p class="quiz-answer2_correct_text">
-                                正解！ -->
-            <!-- </p> -->
+            <!-- correctbox -->
+            <div class="correctbox" id="Q2_correctbox" >
+                <p class="correctbox_title">
+                    正解！
+                </p>
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A </p>
+                    <p class="correctbox_text">X-TECH</p>
+                </div>
+            </div> 
         </div>
 
         <div class="quiz-questions">
@@ -255,7 +271,80 @@
             </div>
         </div>
     </div>
-    
+
+    <div>
+        <div class="p-line_img">
+            <img class="p-line_img" src="./img/bg-line.jpg" alt="LINEimg">
+            <div class="p-line_cover">     
+                <div class="p-line_icon_back">
+                    <div class="p-line_icon">
+                    <img src="./img/icon/icon-line.svg" alt="LINEicon">
+                    </div>
+                </div>
+                <div class="p-line_title">
+                    <h2>POSSE 公式LINE</h2>
+                </div>
+                <div class="p-line_content">
+                    <p> 公式LINEにてご質問を随時受け付けております
+                        <br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせいたしますので
+                        <br>下記ボタンより友達追加をお願いします
+                    </p>
+                </div>
+                <div class="p-line_button_frame">
+                    <div class="p-line_button_message">
+                        <p>LINE追加</p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <footer>
+        <div class="p-footer">
+            <div class="p-footer_logo">
+            <img src="./img/logo.svg" alt="p-logo">
+            </div>
+            <div class="p-footer_official">
+            <p class="p-footer_official_text">POSSE公式サイト</p>
+            </div>
+            <ul class="p-footer_sns p-sns">
+            <li class="p-sns_item">
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="p-sns_item">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
+                </a>
+            </li>
+            </ul>
+            <div class="p-copyright">
+                <p class="p-copyright_text">
+                    @2022 POSSE
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="p-banner">
+        <div class="p-banner_icon_back">
+            <div class="p-banner_icon">
+            <img src="./img/icon/icon-line.svg" alt="LINE">
+            </div>
+        </div>
+        <div class="p-banner_content">
+            <p class="p-banner_text">
+                POSSE公式LINEで
+                <br>最新情報をGET!
+            </p>
+            <i class="u-icon_link">
+            </i> 
+        </div>
+    </div>
+    <script src="./js/quiz.js"></script>
 </body>
 
 </html>
