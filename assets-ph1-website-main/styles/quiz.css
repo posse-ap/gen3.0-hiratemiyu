@@ -1,0 +1,1003 @@
+/* headerの中身をどうするか、pは使いまわししない、nは使いまわす */
+.p-header {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    padding: 15px 24px;
+}
+
+/* headerのlayout(位置)を決めている */
+.l-header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/* class名1つでも良いけど、2つあると分かりやすい l,pは使い方が決まっている */
+
+/* behore after 新人ハッカソンで出てきた文字の下にライン引くやつはこれでできる */
+*,
+::before,
+::after {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+}
+
+.p-header_logo {
+    width: 148px;
+}
+
+.POSSElogo {
+    max-width: 100%;
+}
+
+.p-header_nav {
+    margin-left: auto;
+}
+
+.p-header_nav_list {
+    display: flex;
+    gap: 32px;
+}
+
+.p-header_nav_item_link {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-header_sns {
+    margin-left: 32px;
+}
+
+/* borderはHTMLの部品に枠線を引くためのcssのプロパティの一つです。
+solid	1本線
+フレックスアイテムの主軸方向の揃え位置を指定する
+justify-content フレックスアイテムの主軸方向の揃え位置を指定する
+                主軸方向の中央揃えで表示*/
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+/* これいる？？？？？ */
+i {
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    /* 通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。
+        「Arial」「Vernada」「ヒラギノ角ゴPro W3」「ＭＳ Ｐゴシック」などがフォントファミリー名です。
+       !importantは一言でいえば、合わせて使用したプロパティを最優先で使用することにする命令です。 */
+    font-family: "posse-icon" !important;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-ligatures: discretionary-ligatures;
+    font-weight: normal;
+    /* letter-spacing: 字間 */
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+}
+
+/* なぜtramsparent */
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* beforeで要素を前に出すことで見えるようにする */
+.u-icon_twitter::before {
+    content: "\ea96";
+}
+
+.u-icon_instagram::before {
+    content: "\ea92";
+}
+
+
+/* quiz-top */
+.p-quiz_container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.quiz-top {
+    /* shadow */
+    /* position: absolute;
+    width: 100%;
+    height: 160px;
+    left: 0px;
+    top: 0px;
+
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%); */
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
+}
+
+.quiz-top_img {
+    margin-top: 70px;
+    height: 350px;
+}
+
+.quiz-top_subtitle {
+    position: absolute;
+    width: 119px;
+    height: 32px;
+    margin-top: -230px;
+    margin-left: 210px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 180%;
+    color: #EFF2F5;
+}
+
+.quiz-top_title {
+    position: absolute;
+    width: 435px;
+    height: 90px;
+    left: 220px;
+    top: 230px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.quiz-question1-subheading {
+    /* Auto layout */
+    margin-top: -90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: absolute;
+    width: 85px;
+    height: 70px;
+
+    /* primary */
+    background: #0071BC;
+    border-radius: 8px;
+}
+
+.Q1 {
+    /* Q 1 */
+    position: absolute;
+
+    width: 53px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-question1_text
+ {
+    /* 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？ */
+    width: 984px;
+    height: 108px;
+    left: calc(50% - 984px/2);
+    margin-top: 480px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 170%;
+    /* or 54px */
+
+    text-align: justify;
+
+    /* BK */
+
+    color: #333333;
+}
+
+.quiz-question1_img {
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 75%;
+}
+
+.quiz-answer1_subheading {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+
+    width: 58px;
+    height: 80px;
+    left: 60px;
+    margin-top: 70px;
+
+    /* red */
+
+    background: #E34E70;
+    border-radius: 8px;
+}
+
+.question1-A {
+    width: 26px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer1_choices {
+    margin-top: 50px;
+    margin-left: 0px;
+    display: flex;
+    gap: 30px;
+}
+
+.quiz-answer1_choice1,
+.quiz-answer1_choice2,
+.quiz-answer1_choice3 {
+    /* Question */
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    gap: 8px;
+    width: 312px;
+    height: 80px;
+
+    /* White */
+    background: #FFFFFF;
+
+    /* line */
+    border: 5px solid #EEEEEE;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-answer1_choice_text {
+    /* 約28万人 */
+    width: 240px;
+    height: 32px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+
+    /* BK */
+
+    color: #333333;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* .Q1_correctbox{
+    position: absolute;
+    border: #333333;
+    width: 300px;
+    height: 200px ;
+    margin-top: 150px;
+    /* Rectangle 17 */
+/* red-bg */
+
+/* background: #FFF2F5;
+border-radius: 8px;
+}  */
+
+.quiz-question1_copyright,
+.quiz-question5_copyright,
+.quiz-question6_copyright {
+    /* Rectangle */
+    position: relative;
+    width: 984px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 0px;
+    /* background-bg */
+
+    background: #F6F6F6;
+    border-radius: 8px;
+}
+
+
+.quiz-question1_copyright_text,
+.quiz-question5_copyright_text
+ {
+    /* 経済産業省 2019年3月 － IT 人材需給に関する調査 */
+    position: absolute;
+    width: 411px;
+    height: 32px;
+    left: 64px;
+    top: 5px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+}
+
+.quiz-question6_copyright_text{
+    position: absolute;
+    width: 411px;
+    height: 32px;
+    left: 64px;
+    top: 20px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+}
+
+
+
+/* Q2 */
+
+.quiz-question2-subheading,
+.quiz-question3-subheading,
+.quiz-question4-subheading,
+.quiz-question5-subheading,
+.quiz-question6-subheading
+ {
+    /* Auto layout */
+    margin-top: -100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: absolute;
+    width: 85px;
+    height: 70px;
+
+    /* primary */
+    background: #0071BC;
+    border-radius: 8px;
+}
+
+.Q2,
+.Q3,
+.Q4,
+.Q5,
+.Q6 {
+    /* Q 2 */
+
+    width: 53px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.quiz-question2_text,
+.quiz-question3_text,
+.quiz-question4_text,
+.quiz-question5_text,
+.quiz-question6_text
+ {
+    /* 日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？ */
+    width: 984px;
+    height: 108px;
+    left: calc(50% - 984px/2);
+    margin-top: 250px;
+    margin-left: 30px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    text-align: justify;
+
+    /* BK */
+
+    color: #333333;
+}
+
+.quiz-question2_img,
+.quiz-question3_img,
+.quiz-question4_img,
+.quiz-question5_img,
+.quiz-question6_img  {
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 75%;
+}
+
+.quiz-answer2_subheading,
+.quiz-answer3_subheading,
+.quiz-answer4_subheading,
+.quiz-answer5_subheading,
+.quiz-answer6_subheading {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+
+    position: relative;
+    width: 58px;
+    height: 80px;
+    margin-top: 10px;
+
+    /* red */
+
+    background: #E34E70;
+    border-radius: 8px;
+}
+
+.question2-A,
+.question3-A,
+.question4-A,
+.question5-A,
+.question6-A {
+    width: 26px;
+    height: 54px;
+
+    /* h2 */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+
+    /* White */
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.quiz-answer2_choices,
+.quiz-answer3_choices,
+.quiz-answer4_choices,
+.quiz-answer5_choices,
+.quiz-answer6_choices {
+    margin-top: 20px;
+    margin-left: 0px;
+    display: flex;
+    gap: 30px;
+}
+
+.quiz-answer2_choice1,
+.quiz-answer2_choice2,
+.quiz-answer2_choice3,
+.quiz-answer3_choice1,
+.quiz-answer3_choice2,
+.quiz-answer3_choice3,
+.quiz-answer4_choice1,
+.quiz-answer4_choice2,
+.quiz-answer4_choice3,
+.quiz-answer5_choice1,
+.quiz-answer5_choice2,
+.quiz-answer5_choice3,
+.quiz-answer6_choice1,
+.quiz-answer6_choice2,
+.quiz-answer6_choice3
+ {
+    /* Question */
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px;
+    gap: 8px;
+    width: 330px;
+    height: 80px;
+
+    /* White */
+    background: #FFFFFF;
+
+    /* line */
+    border: 5px solid #EEEEEE;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    cursor: pointer;
+}
+
+
+
+.quiz-answer2_choice_text,
+.quiz-answer3_choice_text,
+.quiz-answer4_choice_text,
+.quiz-answer5_choice_text,
+.quiz-answer6_choice_text {
+    /* 約28万人 */
+
+
+    width: 250px;
+    height: 32px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+
+    /* BK */
+    color: #333333;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+/* correctbox */
+
+.correctbox,
+.incorrectbox{
+    display: block;
+    background-color: #fff2f5;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 12px 60px;
+    height: 130px;
+}
+
+.incorrectbox{
+    display: block;
+    background-color: #eff2f5;
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 12px 60px;
+    height: 130px;
+}
+
+.correctbox_title{
+    color: #e34e70;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 0;
+}
+
+.incorrectbox_title{
+    color: #0071bc;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 0;
+}
+
+.correctbox_content{
+        align-items: baseline;
+        display: flex;
+        font-size: 18px;
+        font-weight: bold;
+        gap: 18px;
+        line-height: 0;
+}
+
+.correctbox_label{
+    font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+    font-size: 24px;
+}
+
+.correctbox_text{
+    align-items: baseline;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 18px;
+    line-height: 1.8;
+    margin-top: 16px;
+}
+
+.correctbox,
+.incorrectbox{
+    display: none;
+}
+
+.is-selected{
+    display: block;
+}
+
+.another_is-selected{
+    pointer-events: none;
+}
+/* .is-wrongselected{
+    display: block;
+} */
+
+.is-clicked{
+    background-color: #eff2f5;
+    border-color: #0071bc;
+}
+
+/* p-line */
+
+.p-line_cover {
+    /* Rectangle 9 */
+    position: absolute;
+    margin-top: -365px;
+    width: 984px;
+    height: 357px;
+    /* primary */
+    background: rgba(0,113,188,0.8) ;
+    mix-blend-mode: normal;
+    border-radius: 48px;
+}
+
+.p-line_img {
+    position: relative;
+    width: 984px;
+    height: 357px;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 0.28%;
+    border-radius: 48px;
+}
+
+
+.p-line_icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    right: 62.7%;
+    top: -3px;
+    bottom: 66.2%;
+
+}
+
+.p-line_icon_back{
+    position: relative;
+    width: 40px;
+    height: 38px;
+    left: 160px;
+    right: 62.7%;
+    top: 90px;
+    bottom: 66.2%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.p-line_title {
+    position: relative;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 180%;
+    /* identical to box height, or 65px */
+
+    text-align: center;
+
+    /* light */
+
+    color: #FFFFFF;
+}
+
+
+.p-line_content {
+    position: absolute;
+    left: 22.87%;
+    right: 22.76%;
+    top: 41.62%;
+    bottom: 39.94%;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* /* or 22px * */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* /* light * */
+    color: #FFFFFF;
+}
+
+
+.p-line_button_frame {
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: 300px;
+    top: 270px;
+
+    /* light */
+    background: #FFFFFF;
+    border-radius: 98px;
+}
+
+.p-line_button_message {
+    position: absolute;
+    width: 77px;
+    height: 23.39px;
+    left: 120px;
+    top: 13.9px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    /* /* gray-dark  */
+    color: #666666;
+}
+
+
+/* footer */
+.p-footer {
+    position: relative;
+    margin-top: 300px;
+    border-top: 1px solid #adadad;
+    width: 100%;
+
+}
+
+.p-footer_logo {
+    margin-top: 40px;
+    margin-left: 600px;
+
+}
+
+.p-footer_official {
+    position: relative;
+    margin-top: 10px;
+    margin-left: -1600px;
+    /* POSSE 公式サイト */
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    text-align: center;
+
+    /* gray-dark */
+
+    color: #666666;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-footer_sns {
+    margin-left: 610px;
+    margin-top: -20px;
+}
+
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+.p-copyright {
+    width: 100%;
+    margin-top: 35px;
+    margin-left: -50px;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 13px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* gray-dark */
+
+    color: #666666;
+    border-top: 1px solid #adadad;
+}
+
+/* banner */
+.p-banner {
+    position: fixed;
+    width: 288px;
+    height: 80px;
+    right: 16px;
+    bottom: 16px;
+    background: #5FDF5B;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+
+.p-banner_icon_back{
+    position: relative;
+    bottom: 60px;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    
+}
+
+.p-banner_icon {
+    /* icon-line */
+    position: absolute;
+    bottom: 60px;
+    width: 36px;
+    height: 36px;
+    left: 0px;
+    top: -8px;
+    
+}
+
+.p-banner_text {
+    position:absolute ;
+    width: 160px;
+    height: 50px;
+    left: 90px;
+    top: 11px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    /* or 18px */
+
+    letter-spacing: 0.14em;
+
+    color: #FFFFFF;
+}
+
+
+.u-icob_link::before{
+    content: "\e901";
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-left: 35px;
+}
