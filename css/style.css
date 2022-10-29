@@ -1,0 +1,145 @@
+body {
+    background-color: #EEEEEE;
+}
+
+/* header */
+
+.header {
+    height: 64px;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+}
+
+.header_item {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo_img {
+    height: 30px;
+}
+
+.header_week {
+    font-size: 15px;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #33ccff;
+}
+
+/* ボタン */
+
+.header_btn_box {
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+
+}
+
+.header_btn {
+    color: aliceblue;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, blue, #33ccff);
+    border-radius: 10px;
+    padding: 5px 30px;
+    margin-bottom: 15%;
+    box-shadow: 0 10px 10px 0 #a5e5fb;
+}
+
+
+
+
+/* main */
+.container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    padding-top: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #EEEEEE;
+}
+
+.box-wrapper1 {
+    display: grid;
+    gap: 20px;
+}
+
+.box1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.box-item {
+    background-color: white;
+    list-style: none;
+}
+
+.box2 {
+    background-color: white;
+    height: 400px;
+}
+
+.box-wrapper2 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    height: 520px;
+}
+
+.box3 {
+    background-color: white;
+}
+
+.box_item_title {
+    color: #33ccff;
+}
+
+.box_item_inputhour {
+    font-size: 65px;
+}
+
+.box_item_hour {
+    color: #a5e5fb;
+}
+
+/* DATE */
+.date_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+
+}
+
+.arrow_left {
+    border-bottom: solid 2px #33ccff;
+    border-left: solid 2px #33ccff;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+}
+
+.arrow_right {
+    border-top: solid 2px #33ccff;
+    border-right: solid 2px #33ccff;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+}
