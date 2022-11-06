@@ -41,42 +41,51 @@ $('#modal_record').click(function () {
 
 
 // 棒グラフ
-(function () {
-	'use strict';
+var bar_ctx = document.getElementById('my_bar_chart').getContext('2d');
 
-	var type = 'bar';
+var purple_orange_gradient = bar_ctx.createLinearGradient(0, 0, 0, 600);
+purple_orange_gradient.addColorStop(0, '#3BCFFF');
+purple_orange_gradient.addColorStop(1, '#1174BD');
 
-	var data = {
-		labels: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30,],
+var bar_chart = new Chart(bar_ctx, {
+	type: 'bar',
+	data: {
+		labels: [, 2, , 4, , 6, , 8, , 10, , 12, , 14, , 16, , 18, , 20, , 22, , 24, , 26, , 28, , 30],
 		datasets: [{
-			data: [0, 2, 4, 6, 8],
-
+			data: [1, 2, 4, 6, 8, 3, 3, 3, 4,],
+			backgroundColor: purple_orange_gradient,
+			hoverBackgroundColor: purple_orange_gradient,
+			hoverBorderWidth: 2,
+			hoverBorderColor: 'purple'
 		}]
-	};
-
-	var options = {
+	},
+	options: {
 		scales: {
 			yAxes: [{
 				ticks: {
 					// min: 0,
 					// max: 400
 					suggestedMin: 0,
-					suggestedMax: 8,
+					suggestedMax: 10,
 					stepSize: 2,
 					callback: function (value, index, values) {
-						return  value + 'h' ;
+						return value + 'h';
 					}
 				}
-			}]
+			}],
+			xAxes: [{
+				ticks: {
+					stepSize: 2,
+				}
+			}],
+		},
+		legend: {
+			display: false,
 		}
-	};
+	}
+})
 
-	var ctx = document.getElementById('my_chart').getContext('2d');
-	var myChart = new Chart(ctx, {
-		type: type,
-		data: data,
-		options: options
-	});
-})();
+// 円グラフ
+
 
 

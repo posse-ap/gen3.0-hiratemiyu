@@ -192,6 +192,10 @@ textarea {
     height: 520px;
 }
 
+.bar_graph{
+    height: 400px;
+}
+
 .box3 {
     background-color: white;
 }

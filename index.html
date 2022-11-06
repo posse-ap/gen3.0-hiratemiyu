@@ -8,7 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
 </head>
 
 <body>
@@ -113,12 +114,16 @@
             </ul>
             <!-- 棒グラフ -->
             <div class="box2" >
-                <canvas id="my_chart" height="400px"></canvas>
+                <canvas class="bar_graph" id="my_bar_chart" ></canvas>
             </div>
         </div>
         <div class="box-wrapper2">
-            <div class="box3"></div>
-            <div class="box3"></div>
+            <div class="box3">
+                <canvas id="first_chart"></canvas>
+            </div>
+            <div class="box3">
+                <canvas id="my_secondpie_chart"></canvas>
+            </div>
         </div>
     </main>
     <div class="date_box">
@@ -126,7 +131,7 @@
         <div class="date">2020年 10月</div>
         <div class="arrow_right"></div>
     </div>
-
+    
 </body>
 
 <script src="./jquery-3.6.1.min (1).js"></script>
