@@ -52,7 +52,7 @@ var bar_chart = new Chart(bar_ctx, {
 	data: {
 		labels: [, 2, , 4, , 6, , 8, , 10, , 12, , 14, , 16, , 18, , 20, , 22, , 24, , 26, , 28, , 30],
 		datasets: [{
-			data: [1, 2, 4, 6, 8, 3, 3, 3, 4,],
+			data: [0, 2, 4, 6, 8, 3, 3, 3, 4,],
 			backgroundColor: purple_orange_gradient,
 			hoverBackgroundColor: purple_orange_gradient,
 			hoverBorderWidth: 2,
@@ -66,26 +66,91 @@ var bar_chart = new Chart(bar_ctx, {
 					// min: 0,
 					// max: 400
 					suggestedMin: 0,
-					suggestedMax: 10,
+					suggestedMax: 8,
 					stepSize: 2,
 					callback: function (value, index, values) {
 						return value + 'h';
 					}
+				},
+				gridLines: {
+					display: false,
+					drawBorder: false,
 				}
 			}],
 			xAxes: [{
-				ticks: {
-					stepSize: 2,
+				gridLines: {
+					display: false,
+					drawBorder: false,
 				}
 			}],
 		},
 		legend: {
 			display: false,
+
 		}
 	}
 })
 
-// 円グラフ
+//ドーナツグラフ
+var options = {
+	series: [42, 18, 10, 8, 7, 5, 5, 5],
+	chart: {
+		type: 'donut',
+	},
+	responsive: [{
+		breakpoint: 480,
+		options: {
+			chart: {
+				width: 200
+			},
+			legend: {
+				position: 'bottom'
+			}
+		}
+	}],
+	colors: ['#0345EC', '#0F72BD', '#20BDDE', '#3DCEFE', '#B29EF3', '#6D46EC', '#4A18EF', '#3105C0',],
+	yaxis: {
+		labels: {
+			formatter: function (value) {
+				return value + "%";
+			}
+		},
+	},
+	xaxis: {
+		labels: {
+			formatter: function (value) {
+				return value;
+			}
+		}
+	}
+};
+
+var chart = new ApexCharts(document.querySelector("#myChart2"), options);
+chart.render();
+
+// ドーナツグラフ2
+var options = {
+	series: [44, 55, 41, 17, 15],
+	chart: {
+		type: 'donut',
+	},
+	responsive: [{
+		breakpoint: 480,
+		options: {
+			chart: {
+				width: 200
+			},
+			legend: {
+				position: 'bottom'
+			}
+		}
+	}],
+
+};
+
+var chart = new ApexCharts(document.querySelector("#myChart3"), options);
+chart.render();
+
 
 
 

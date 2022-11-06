@@ -110,19 +110,19 @@ body {
 
 }
 
-.modal_both{
+.modal_both {
     display: grid;
     /* justify-content: center;
     align-items: center; */
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
 }
 
-.modal_left{
+.modal_left {
     margin-left: 5%;
 }
 
-.modal_right{
+.modal_right {
     margin-right: 0px;
 
 }
@@ -133,9 +133,7 @@ body {
     margin-top: 5%;
 }
 
-.checkboxes{
-
-}
+.checkboxes {}
 
 textarea {
     resize: none;
@@ -192,8 +190,9 @@ textarea {
     height: 520px;
 }
 
-.bar_graph{
+.bar_graph {
     height: 400px;
+    width: 100px;
 }
 
 .box3 {
@@ -333,7 +332,7 @@ textarea {
     width: 150px;
     height: 150px;
     padding: 10px;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,7 +350,7 @@ textarea {
 }
 
 /* complete */
-.complete-box{
+.complete-box {
     width: 200px;
     height: 200px;
     background-color: transparent;
@@ -361,8 +360,14 @@ textarea {
     padding-top: 100px;
 }
 
-.complete-mark_img{
-    width:150px;
+.complete-mark_img {
+    width: 150px;
     height: 150px;
     padding-top: 50px;
+}
+
+/* 円グラフ */
+.myChart2,.myChart3 {
+    width: 50vw;
+    height: 100vh;
 }

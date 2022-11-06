@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-
 </head>
 
 <body>
@@ -113,16 +113,16 @@
                 </li>
             </ul>
             <!-- 棒グラフ -->
-            <div class="box2" >
-                <canvas class="bar_graph" id="my_bar_chart" ></canvas>
+            <div class="box2">
+                <canvas class="bar_graph" id="my_bar_chart" width="100" height="100"></canvas>
             </div>
         </div>
         <div class="box-wrapper2">
             <div class="box3">
-                <canvas id="first_chart"></canvas>
+                <div id="myChart2" class="myChart2"></div>
             </div>
             <div class="box3">
-                <canvas id="my_secondpie_chart"></canvas>
+                <div id="myChart3" class="myChart3"></div>
             </div>
         </div>
     </main>
@@ -131,7 +131,7 @@
         <div class="date">2020年 10月</div>
         <div class="arrow_right"></div>
     </div>
-    
+
 </body>
 
 <script src="./jquery-3.6.1.min (1).js"></script>
