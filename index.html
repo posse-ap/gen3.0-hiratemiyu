@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js""></script>
 </head>
 
 <body>
@@ -18,13 +19,72 @@
             </div>
             <div class="header_week">4th week</div>
             <div class="header_btn_box">
-                <button class="header_btn" type="button">記録・投稿</button>
+                <button id="modalOpen" class="header_btn" type="button">記録・投稿</button>
             </div>
-            <div class="modal-container">
-                <div class="modal-body">
-                    <div class="modal-close"></div>
-                    <div class="modal-content">
-                        <p>開きました。</p>
+            <!-- modal -->
+            <div id="easyModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modalClose">×</span>
+                    </div>
+                    <div class="modal-body" id="modalbody">
+                        <div class="modal_both">
+                            <div class="modal_left">
+                                <div class="modal_title">学習日</div>
+                                <input name="date" type="date" />
+                                <div class="modal_title">学習コンテンツ（複数選択可)</div>
+                                <div class="checkboxes">
+                                    <input type="checkbox"> N予備校
+                                    <input type="checkbox">ドットインストール
+                                    <br>
+                                    <input type="checkbox">POSSE課題
+                                </div>
+
+                                <div class="modal_title">学習言語</div>
+                                <div class="checkboxes">
+                                    <!-- idでinputとlabelを対応させる -->
+                                    <input type="checkbox" id="check1"><label for="check1">HTML</label>
+                                    <input type="checkbox" id="check2"><label for="check2">CSS</label>
+                                    <input type="checkbox" id="check3"><label for="check3">JavaScript</label>
+                                    <br>
+                                    <input type="checkbox" id="check4"><label for="check4">PHP</label>
+                                    <input type="checkbox" id="check5"><label for="check5">Laravel</label>
+                                    <input type="checkbox" id="check6"><label for="check6">SQL</label>
+                                    <input type="checkbox" id="check7"><label for="check7">SHELL</label>
+                                    <br>
+                                    <input type="checkbox">情報システム基礎知識（その他）
+                                </div>
+                            </div>
+
+                            <div class="modal_right">
+                                <div class="modal_title">学習時間
+                                    <div>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="modal_title">Twitter用コメント
+                                    <div>
+                                        <textarea name="Twitter_commnet" rows="10" cols="30"></textarea>
+                                    </div>
+                                    <input type="checkbox">Twitterにシェアする
+                                </div>
+                            </div>
+                        </div>
+                        <button id="modal_record" class="header_btn modal_btn" type="button">記録・投稿</button>
+                    </div>
+
+                    <!-- loading -->
+                    <div class="spinner-box">
+                        <div class="circle-border">
+                            <div class="circle-core"></div>
+                        </div>
+                    </div>
+
+                    <!-- complete -->
+                    <div class="complete-box" id="completebox">
+                        <div class="cpmplete-mark"><img src="./img/チェックポイントのアイコン 1.png" class="complete-mark_img"
+                                alt="alt"></div>
+                        <div class="complete-message">記録・投稿<br>完了しました</div>
                     </div>
                 </div>
             </div>
@@ -51,7 +111,9 @@
                     <div class="box_item_hour">hour</div>
                 </li>
             </ul>
-            <div class="box2">
+            <!-- 棒グラフ -->
+            <div class="box2" >
+                <canvas id="my_chart" height="400px"></canvas>
             </div>
         </div>
         <div class="box-wrapper2">
