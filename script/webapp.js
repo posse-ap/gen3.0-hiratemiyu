@@ -4,6 +4,9 @@ const buttonClose = document.getElementsByClassName('modalClose')[0];
 const modalBody = document.getElementById('modalbody');
 const completeMark = document.getElementById('completebox');
 
+
+
+
 // ボタンがクリックされた時
 buttonOpen.addEventListener('click', modalOpen);
 function modalOpen() {
@@ -27,17 +30,36 @@ function outsideClose(e) {
 	}
 }
 
-$('.spinner-box').hide()
-$('.complete-box').hide()
+// twitterにシェア→記録投稿→twitter画面→アニメーション
+// twitterにシェアする
+const checkbox = document.getElementByname('checkbox');
+if(checkbox,checked){
+	function OnButtonClick() {
+		target = document.getElementById("modal_record");
+		
+		timerid = window.setTimeout(function () {
+			let twitterShare = document.getElementById('checkbox_share');
+			const textarea = document.getElementById('twitter_comment').value;
+			if (twitterShare.addEventListener('click',function()) {
+				window.open('https://twitter.com/intent/tweet?text=${textarea}')
+			};
+		}, 3000);
+	}
+}
 
-$('#modal_record').click(function () {
-	$('.modal-body').fadeOut()
-	$('.spinner-box').fadeIn()
-	setTimeout(function () {
-		$('.spinner-box').fadeOut()
-		$('.complete-box').fadeIn()
-	}, 3000);
-});
+	// ローディング画面
+	$('.spinner-box').hide()
+	$('.complete-box').hide()
+    $('#modal_record').click(function () {
+		$('.modal-body').fadeOut()
+		$('.spinner-box').fadeIn()
+		setTimeout(function () {
+			$('.spinner-box').fadeOut()
+			$('.complete-box').fadeIn()
+		}, 3000);
+	});
+
+
 
 
 // 棒グラフ
@@ -93,15 +115,24 @@ var bar_chart = new Chart(bar_ctx, {
 
 //ドーナツグラフ
 var options = {
-	series: [42, 18, 10, 8, 7, 5, 5, 5],
 	chart: {
 		type: 'donut',
+	},
+	series: [42, 18, 10, 8, 7, 5, 5, 5],
+	labels: ['JavaScript', 'CSS', 'PHP', 'HTML', 'Laravel', 'SQL', 'SHELL', '情報システム基礎知識（その他）',],
+	plotOptions: {
+		pie: {
+			offsetY: 20,
+			donut: {
+				size: "50px",
+			}
+		}
 	},
 	responsive: [{
 		breakpoint: 480,
 		options: {
 			chart: {
-				width: 200
+				width: 100
 			},
 			legend: {
 				position: 'bottom'
@@ -122,7 +153,7 @@ var options = {
 				return value;
 			}
 		}
-	}
+	},
 };
 
 var chart = new ApexCharts(document.querySelector("#myChart2"), options);
@@ -130,7 +161,8 @@ chart.render();
 
 // ドーナツグラフ2
 var options = {
-	series: [44, 55, 41, 17, 15],
+	series: [42, 33, 25,],
+	labels: ['ドットインストール', 'Ｎ予備校', 'POSSE課題',],
 	chart: {
 		type: 'donut',
 	},
@@ -141,15 +173,33 @@ var options = {
 				width: 200
 			},
 			legend: {
-				position: 'bottom'
+				position: 'bottom',
+				horizontalAlign: 'left',
+				fontsize: "15px",
 			}
 		}
 	}],
-
+	colors: ['#0345EC', '#0F72BD', '#20BDDE',],
+	yaxis: {
+		labels: {
+			formatter: function (value) {
+				return value + "%";
+			}
+		},
+	},
+	xaxis: {
+		labels: {
+			formatter: function (value) {
+				return value;
+			}
+		}
+	}
 };
 
 var chart = new ApexCharts(document.querySelector("#myChart3"), options);
 chart.render();
+
+
 
 
 
