@@ -61,7 +61,7 @@ body {
 
 /* モーダル */
 .modal {
-    display: none;
+    /* display: none; */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -133,7 +133,6 @@ body {
     margin-top: 5%;
 }
 
-.checkboxes {}
 
 textarea {
     resize: none;
@@ -146,6 +145,56 @@ textarea {
     margin: 20px auto;
 }
 
+/* カレンダー */
+.calender{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    /* border: 2px solid #eee; */
+}
+
+thead,
+tfoot {
+    /* background: #eee; */
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+tbody td:first-child {
+    color: red;
+}
+
+tbody td:last-child {
+    color: blue;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+td.disabled {
+    opacity: 0.3;
+}
+
+td.today {
+    font-weight: bold;
+}
+
+#prev,
+#next,
+#today {
+    cursor: pointer;
+    user-select: none;
+}
 
 /* main */
 .container {
@@ -157,6 +206,12 @@ textarea {
     padding-top: 50px;
     grid-template-columns: repeat(2, 1fr);
     background-color: #EEEEEE;
+}
+
+.box1,
+.box2,
+.box3 {
+    border-radius: 10px;
 }
 
 .box-wrapper1 {
@@ -180,7 +235,17 @@ textarea {
 
 .box2 {
     background-color: white;
-    height: 400px;
+    height: 320px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* 棒グラフ */
+#canvas {
+    display: inline-block;
+    width: 100%;
+
 }
 
 .box-wrapper2 {
@@ -190,25 +255,28 @@ textarea {
     height: 520px;
 }
 
-.bar_graph {
-    height: 400px;
-    width: 100px;
-}
+.bar_graph {}
 
 .box3 {
     background-color: white;
+    /* height: 50%; */
+    height: 520px;
+    width: 250px;
 }
 
 .box_item_title {
     color: #33ccff;
+    text-align: center;
 }
 
 .box_item_inputhour {
-    font-size: 65px;
+    font-size: 50px;
+    text-align: center;
 }
 
 .box_item_hour {
     color: #a5e5fb;
+    text-align: center;
 }
 
 /* DATE */
@@ -367,7 +435,8 @@ textarea {
 }
 
 /* 円グラフ */
-.myChart2,.myChart3 {
+.myChart2,
+.myChart3 {
     width: 50vw;
     height: 100vh;
 }

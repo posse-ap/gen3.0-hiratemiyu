@@ -32,7 +32,7 @@
                         <div class="modal_both">
                             <div class="modal_left">
                                 <div class="modal_title">学習日</div>
-                                <input name="date" type="date" />
+                                <div class="display_calender" id="displayCalender"></div>
                                 <div class="modal_title">学習コンテンツ（複数選択可)</div>
                                 <div class="checkboxes">
                                     <input type="checkbox"> N予備校
@@ -64,15 +64,44 @@
                                     </div>
                                 </div>
                                 <div class="modal_title">Twitter用コメント
-                                    <div >
-                                        <textarea id="twitter_comment" name="Twitter_commnet" rows="10" cols="30"></textarea>
+                                    <div>
+                                        <textarea id="twitter_comment" name="Twitter_commnet" rows="10"
+                                            cols="30"></textarea>
                                     </div>
                                     <input id="checkbox_share" type="checkbox" name="checkbox">Twitterにシェアする
                                 </div>
                             </div>
                         </div>
-                        <button id="modal_record" class="header_btn modal_btn" type="button" onclick="Onbuttonclick()" >記録・投稿</button>
+                        <button id="modal_record" class="header_btn modal_btn" type="button">記録・投稿</button>
                     </div>
+
+                <!-- カレンダー -->
+                <div class="modal">
+                    <div class="modal-content">
+                        <div class="calender" id="calender">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th id="prev">&laquo;</th>
+                                        <th id="title" colspan="5">2020/05</th>
+                                        <th id="next">&raquo;</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
                     <!-- loading -->
                     <div class="spinner-box">
@@ -103,25 +132,27 @@
                 </li>
                 <li class="box-item">
                     <div class="box_item_title">Month</div>
-                    <div class="box_item_inputhour">3</div>
+                    <div class="box_item_inputhour">120</div>
                     <div class="box_item_hour">hour</div>
                 </li>
                 <li class="box-item">
                     <div class="box_item_title">Total</div>
-                    <div class="box_item_inputhour">3</div>
+                    <div class="box_item_inputhour">1348</div>
                     <div class="box_item_hour">hour</div>
                 </li>
             </ul>
             <!-- 棒グラフ -->
             <div class="box2">
-                <canvas class="bar_graph" id="my_bar_chart" width="100" height="100"></canvas>
+                <canvas class="bar_graph" id="my_bar_chart"></canvas>
             </div>
         </div>
         <div class="box-wrapper2">
             <div class="box3">
+                <h2>学習言語</h2>
                 <div id="myChart2" class="myChart2"></div>
             </div>
             <div class="box3">
+                <h2>学習コンテンツ</h2>
                 <div id="myChart3" class="myChart3"></div>
             </div>
         </div>

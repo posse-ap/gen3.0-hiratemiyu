@@ -30,36 +30,175 @@ function outsideClose(e) {
 	}
 }
 
-// twitterにシェア→記録投稿→twitter画面→アニメーション
-// twitterにシェアする
-const checkbox = document.getElementByname('checkbox');
-if(checkbox,checked){
-	function OnButtonClick() {
-		target = document.getElementById("modal_record");
-		
-		timerid = window.setTimeout(function () {
-			let twitterShare = document.getElementById('checkbox_share');
-			const textarea = document.getElementById('twitter_comment').value;
-			if (twitterShare.addEventListener('click',function()) {
-				window.open('https://twitter.com/intent/tweet?text=${textarea}')
-			};
-		}, 3000);
-	}
+// カレンダーを出せ
+buttonOpen.addEventListener('click', modalOpen);
+function modalOpen() {
+	modal.style.display = 'block';
+	completeMark.style.display = 'none';
+	modalBody.style.display = 'block';
 }
+
+
+//openTwitter(投稿文、シェアするURL、ハッシュタグ、提供元アカウント)
+
+function openTwitter() {
+	const comment = document.getElementById("twitter_comment").value;
+	var turl = "https://twitter.com/intent/tweet?text="+comment;
+	window.open(turl,'_blank');
+}
+
 
 	// ローディング画面
 	$('.spinner-box').hide()
 	$('.complete-box').hide()
     $('#modal_record').click(function () {
-		$('.modal-body').fadeOut()
-		$('.spinner-box').fadeIn()
-		setTimeout(function () {
-			$('.spinner-box').fadeOut()
-			$('.complete-box').fadeIn()
-		}, 3000);
-	});
+		//呼び出し例：
+		if(document.getElementById("checkbox_share").checked){openTwitter();}
+			$('.modal-body').fadeOut()
+			$('.spinner-box').fadeIn()
+			setTimeout(function () {
+				$('.spinner-box').fadeOut()
+				$('.complete-box').fadeIn()
+			}, 3000);
+		});
+		
 
 
+// カレンダー
+
+
+console.clear();
+{
+    const today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+
+    function getCalendarHead() {
+        const dates = [];
+        const d = new Date(year, month, 0).getDate();
+        const n = new Date(year, month, 1).getDay();
+
+    for (let i = 0; i < n; i++) {
+      // 30
+      // 29, 30
+      // 28, 29, 30
+        dates.unshift({
+        date: d - i,
+        isToday: false,
+        isDisabled: true,
+        });
+    }
+
+    return dates;
+    }
+
+    function getCalendarBody() {
+    const dates = []; // date: 日付, day: 曜日
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 1; i <= lastDate; i++) {
+        dates.push({
+        date: i,
+        isToday: false,
+        isDisabled: false,
+        });
+    }
+
+    if (year === today.getFullYear() && month === today.getMonth()) {
+        dates[today.getDate() - 1].isToday = true;
+    }
+
+    return dates;
+    }
+
+    function getCalendarTail() {
+    const dates = [];
+    const lastDay = new Date(year, month + 1, 0).getDay();
+
+    for (let i = 1; i < 7 - lastDay; i++) {
+        dates.push({
+        date: i,
+        isToday: false,
+        isDisabled: true,
+        });
+    }
+
+    return dates;
+    }
+
+    function clearCalendar() {
+    const tbody = document.querySelector('tbody');
+
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+    }
+
+    function renderTitle() {
+    const title = `${year}/${String(month + 1).padStart(2, '0')}`;
+    document.getElementById('title').textContent = title;
+    }
+
+    function renderWeeks() {
+    const dates = [
+        ...getCalendarHead(),
+        ...getCalendarBody(),
+        ...getCalendarTail(),
+    ];
+    const weeks = [];
+    const weeksCount = dates.length / 7;
+
+    for (let i = 0; i < weeksCount; i++) {
+        weeks.push(dates.splice(0, 7));
+    }
+
+    weeks.forEach(week => {
+        const tr = document.createElement('tr');
+        week.forEach(date => {
+        const td = document.createElement('td');
+
+        td.textContent = date.date;
+        if (date.isToday) {
+            td.classList.add('today');
+        }
+        if (date.isDisabled) {
+            td.classList.add('disabled');
+        }
+
+        tr.appendChild(td);
+        });
+        document.querySelector('tbody').appendChild(tr);
+    });
+    }
+
+    function createCalendar() {
+        clearCalendar();
+        renderTitle();
+        renderWeeks();
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+    month--;
+    if (month < 0) {
+        year--;
+        month = 11;
+    }
+
+    createCalendar();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+    month++;
+    if (month > 11) {
+        year++;
+        month = 0;
+    }
+
+    createCalendar();
+    });
+
+    createCalendar();
+}
 
 
 // 棒グラフ
@@ -108,36 +247,46 @@ var bar_chart = new Chart(bar_ctx, {
 		},
 		legend: {
 			display: false,
-
 		}
-	}
+		
+	},
+	// grid:{
+	// 	padding: {
+	// 		top: 100,
+	// 		right: 0,
+	// 		bottom: 0,
+	// 		left: 10,
+	// 	},  
+	// },
 })
 
-//ドーナツグラフ
+//ドーナツグラフ2
 var options = {
 	chart: {
 		type: 'donut',
+		width:'35%',
+		height:'80%',
 	},
 	series: [42, 18, 10, 8, 7, 5, 5, 5],
 	labels: ['JavaScript', 'CSS', 'PHP', 'HTML', 'Laravel', 'SQL', 'SHELL', '情報システム基礎知識（その他）',],
 	plotOptions: {
-		pie: {
+		donut: {
 			offsetY: 20,
-			donut: {
-				size: "50px",
-			}
+
 		}
+	},
+	legend: {
+		position: 'bottom',
+		horizontalAlign: 'left',
+
 	},
 	responsive: [{
 		breakpoint: 480,
 		options: {
-			chart: {
-				width: 100
-			},
-			legend: {
-				position: 'bottom'
-			}
-		}
+			// chart: {
+			// 	width: 200
+			// },
+		},
 	}],
 	colors: ['#0345EC', '#0F72BD', '#20BDDE', '#3DCEFE', '#B29EF3', '#6D46EC', '#4A18EF', '#3105C0',],
 	yaxis: {
@@ -159,24 +308,28 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#myChart2"), options);
 chart.render();
 
-// ドーナツグラフ2
+
+
+// ドーナツグラフ3
 var options = {
 	series: [42, 33, 25,],
 	labels: ['ドットインストール', 'Ｎ予備校', 'POSSE課題',],
 	chart: {
 		type: 'donut',
+		width:'35%',
+		height:'80%',
+	},
+	legend: {
+		position: 'bottom',
+		horizontalAlign: 'center',
+		fontsize: "15px",
 	},
 	responsive: [{
 		breakpoint: 480,
 		options: {
 			chart: {
-				width: 200
+				width: 100,
 			},
-			legend: {
-				position: 'bottom',
-				horizontalAlign: 'left',
-				fontsize: "15px",
-			}
 		}
 	}],
 	colors: ['#0345EC', '#0F72BD', '#20BDDE',],
@@ -193,12 +346,51 @@ var options = {
 				return value;
 			}
 		}
-	}
+	},
 };
 
 var chart = new ApexCharts(document.querySelector("#myChart3"), options);
 chart.render();
 
+
+
+// twitterにシェア→記録投稿→twitter画面→アニメーション
+// twitterにシェアする
+// const checkbox = document.getElementByname('checkbox');
+// const textarea = document.getElementByname('twitter_comment');
+
+// if(checkbox,checked){
+// 	function OnButtonClick() {
+// 		target = document.getElementById("modal_record");
+//         window.open('https://twitter.com/intent/tweet?text=${textarea}');
+
+
+// function twitText() {
+// 	var s, url;
+// 	s = "投稿するテキスト";
+// 	url = document.location.href;
+	
+// 	if (s != "") {
+// 		if (s.length > 140) {
+// 			//文字数制限
+// 			alert("テキストが140字を超えています");
+// 		} else {
+// 			//投稿画面を開く
+// 			url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
+// 			window.open(url,"_blank","width=600,height=300");
+// 		}
+// 	}
+// }
+
+// document.getElementById("tweet").addEventListener('click', function(event) {
+// 	event.preventDefault();
+// 	var left = Math.round(window.screen.width / 2 - 275);
+// 	var top = (window.screen.height > 420) ? Math.round(window.screen.height / 2 - 210) : 0;
+// 	window.open(
+// 		"https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.getElementById("txtbox").value),
+// 		null,
+// 		"scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top);
+// });
 
 
 
