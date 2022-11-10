@@ -24,7 +24,20 @@
             </div>
             <!-- modal -->
             <div id="easyModal" class="modal">
-                <div class="modal-content">
+                <div class="modal-content modal_content">
+                        <!-- loading -->
+                        <div class="spinner-box">
+                            <div class="circle-border">
+                                <div class="circle-core"></div>
+                            </div>
+                        </div>
+    
+                        <!-- complete -->
+                        <div class="complete-box" id="completebox">
+                            <div class="cpmplete-mark"><img src="./img/チェックポイントのアイコン 1.png" class="complete-mark_img"
+                                    alt="alt"></div>
+                            <div class="complete-message">記録・投稿<br>完了しました</div>
+                        </div>
                     <div class="modal-header">
                         <span class="modalClose">×</span>
                     </div>
@@ -32,7 +45,7 @@
                         <div class="modal_both">
                             <div class="modal_left">
                                 <div class="modal_title">学習日</div>
-                                <div class="display_calender" id="displayCalender"></div>
+                                <input type="text" name="date" id="date">
                                 <div class="modal_title">学習コンテンツ（複数選択可)</div>
                                 <div class="checkboxes">
                                     <input type="checkbox"> N予備校
@@ -74,48 +87,39 @@
                         </div>
                         <button id="modal_record" class="header_btn modal_btn" type="button">記録・投稿</button>
                     </div>
+                </div>
 
                 <!-- カレンダー -->
-                <div class="modal">
+                <div class="modal" id="modal_calender">
                     <div class="modal-content">
-                        <div class="calender" id="calender">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th id="prev">&laquo;</th>
-                                        <th id="title" colspan="5">2020/05</th>
-                                        <th id="next">&raquo;</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Sun</th>
-                                        <th>Mon</th>
-                                        <th>Tue</th>
-                                        <th>Wed</th>
-                                        <th>Thu</th>
-                                        <th>Fri</th>
-                                        <th>Sat</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <div class="calender" id="calender_content">
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th id="prev">&laquo;</th>
+                                            <th id="title" colspan="5">2020/05</th>
+                                            <th id="next">&raquo;</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Sun</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <div id="check">決定</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                    <!-- loading -->
-                    <div class="spinner-box">
-                        <div class="circle-border">
-                            <div class="circle-core"></div>
-                        </div>
-                    </div>
-
-                    <!-- complete -->
-                    <div class="complete-box" id="completebox">
-                        <div class="cpmplete-mark"><img src="./img/チェックポイントのアイコン 1.png" class="complete-mark_img"
-                                alt="alt"></div>
-                        <div class="complete-message">記録・投稿<br>完了しました</div>
-                    </div>
                 </div>
             </div>
 

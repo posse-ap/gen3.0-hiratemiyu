@@ -61,7 +61,7 @@ body {
 
 /* モーダル */
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -167,6 +167,7 @@ th,
 td {
     padding: 8px;
     text-align: center;
+    line-height: 2em;
 }
 
 tbody td:first-child {
@@ -187,6 +188,9 @@ td.disabled {
 
 td.today {
     font-weight: bold;
+    background-color: #33ccff;
+    border-radius: 50%;
+    color: #ffffff;
 }
 
 #prev,
@@ -194,6 +198,24 @@ td.today {
 #today {
     cursor: pointer;
     user-select: none;
+
+}
+
+#check{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: aliceblue;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, blue, #33ccff);
+    border-radius: 10px;
+    padding: 5px 30px;
+    /* margin-bottom: 15%; */
+    box-shadow: 0 10px 10px 0 #a5e5fb;
+    cursor: pointer;
+    margin:20px auto;
+    width: 30%;
 }
 
 /* main */
@@ -259,7 +281,6 @@ td.today {
 
 .box3 {
     background-color: white;
-    /* height: 50%; */
     height: 520px;
     width: 250px;
 }
@@ -439,4 +460,55 @@ td.today {
 .myChart3 {
     width: 50vw;
     height: 100vh;
+}
+
+
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 30px;
+    }   
+
+    .box1{
+        width: 20px;
+    }
+
+    .box-item{
+        width: 100px;
+        text-align: center;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    .box_item_inputhour{
+        font-size: 30px;
+    }   
+    
+    .box-wrapper2{
+        height: 200px;
+    }
+
+    .box2{
+        height: 200px;
+        width: 340px;
+    }
+
+    .box3 {
+        background-color: white;
+        height: 320px;
+        width: 150px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .date_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10em;
+    }
 }

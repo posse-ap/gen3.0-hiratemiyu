@@ -3,8 +3,9 @@ const modal = document.getElementById('easyModal');
 const buttonClose = document.getElementsByClassName('modalClose')[0];
 const modalBody = document.getElementById('modalbody');
 const completeMark = document.getElementById('completebox');
-
-
+const modalContent = document.querySelector(".modal_content");
+const date = document.getElementById("date");
+const calenderContent = document.getElementById("modal_calender");
 
 
 // ボタンがクリックされた時
@@ -55,6 +56,7 @@ function openTwitter() {
 		//呼び出し例：
 		if(document.getElementById("checkbox_share").checked){openTwitter();}
 			$('.modal-body').fadeOut()
+			$('.calender').fadeOut()
 			$('.spinner-box').fadeIn()
 			setTimeout(function () {
 				$('.spinner-box').fadeOut()
@@ -65,7 +67,23 @@ function openTwitter() {
 
 
 // カレンダー
+date.addEventListener('click', calenderOpen);
+function calenderOpen() {
+	modal.style.display = 'block';
+	completeMark.style.display = 'none';
+	modalBody.style.display = 'none';
+    calenderContent.style.display = 'block';
+	modalContent.style.display = 'none';
+};
 
+const check = document.getElementById("check");
+
+check.addEventListener('click', calenderClose);
+function calenderClose() {
+	calenderContent.style.display = 'none';
+	modalContent.style.display = 'block';
+	modalBody.style.display = 'block';
+}
 
 console.clear();
 {
@@ -154,9 +172,11 @@ console.clear();
 
     weeks.forEach(week => {
         const tr = document.createElement('tr');
+// 1個1個
         week.forEach(date => {
         const td = document.createElement('td');
 
+// 仮引数.value date(peoperty)の中の項目(number)
         td.textContent = date.date;
         if (date.isToday) {
             td.classList.add('today');
@@ -166,6 +186,15 @@ console.clear();
         }
 
         tr.appendChild(td);
+		td.addEventListener('click',()=>{
+			const yearMonth = document.getElementById("title");
+			console.log(yearMonth);
+			console.log(yearMonth.innerHTML);
+			console.log(yearMonth.innerHTML+"/"+td.innerHTML);
+            // yearMonth.innerHTML;
+			const date = document.getElementById("date");
+			date.value = yearMonth.innerHTML+"/"+td.innerHTML
+		})
         });
         document.querySelector('tbody').appendChild(tr);
     });
