@@ -279,14 +279,6 @@ var bar_chart = new Chart(bar_ctx, {
 		}
 		
 	},
-	// grid:{
-	// 	padding: {
-	// 		top: 100,
-	// 		right: 0,
-	// 		bottom: 0,
-	// 		left: 10,
-	// 	},  
-	// },
 })
 
 //ドーナツグラフ2
@@ -312,9 +304,16 @@ var options = {
 	responsive: [{
 		breakpoint: 480,
 		options: {
-			// chart: {
-			// 	width: 200
-			// },
+			chart: {
+				type: 'donut',
+				width:'80%',
+				height:'90%',
+			},
+			legend: {
+				position: 'bottom',
+				horizontalAlign: 'left',
+				fontSize: '10px',
+			},
 		},
 	}],
 	colors: ['#0345EC', '#0F72BD', '#20BDDE', '#3DCEFE', '#B29EF3', '#6D46EC', '#4A18EF', '#3105C0',],
@@ -350,16 +349,19 @@ var options = {
 	},
 	legend: {
 		position: 'bottom',
-		horizontalAlign: 'center',
-		fontsize: "15px",
+		horizontalAlign: 'left',
+		fontsize: "10px",
 	},
 	responsive: [{
-		breakpoint: 480,
+		breakpoint: 768,
 		options: {
 			chart: {
-				width: 100,
+				type: 'donut',
+				width:'70%',
+				height:'80%',
 			},
 		}
+		
 	}],
 	colors: ['#0345EC', '#0F72BD', '#20BDDE',],
 	yaxis: {
@@ -382,44 +384,6 @@ var chart = new ApexCharts(document.querySelector("#myChart3"), options);
 chart.render();
 
 
-
-// twitterにシェア→記録投稿→twitter画面→アニメーション
-// twitterにシェアする
-// const checkbox = document.getElementByname('checkbox');
-// const textarea = document.getElementByname('twitter_comment');
-
-// if(checkbox,checked){
-// 	function OnButtonClick() {
-// 		target = document.getElementById("modal_record");
-//         window.open('https://twitter.com/intent/tweet?text=${textarea}');
-
-
-// function twitText() {
-// 	var s, url;
-// 	s = "投稿するテキスト";
-// 	url = document.location.href;
-	
-// 	if (s != "") {
-// 		if (s.length > 140) {
-// 			//文字数制限
-// 			alert("テキストが140字を超えています");
-// 		} else {
-// 			//投稿画面を開く
-// 			url = "http://twitter.com/share?url=" + escape(url) + "&text=" + s;
-// 			window.open(url,"_blank","width=600,height=300");
-// 		}
-// 	}
-// }
-
-// document.getElementById("tweet").addEventListener('click', function(event) {
-// 	event.preventDefault();
-// 	var left = Math.round(window.screen.width / 2 - 275);
-// 	var top = (window.screen.height > 420) ? Math.round(window.screen.height / 2 - 210) : 0;
-// 	window.open(
-// 		"https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.getElementById("txtbox").value),
-// 		null,
-// 		"scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top);
-// });
 
 
 

@@ -8,6 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- googlFonts読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">  
     <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 </head>
@@ -122,42 +126,43 @@
 
                 </div>
             </div>
-
         </div>
     </header>
 
     <main class="container">
-        <div class="box-wrapper1">
-            <ul class="box1">
-                <li class="box-item">
-                    <div class="box_item_title">Today</div>
-                    <div class="box_item_inputhour">3</div>
-                    <div class="box_item_hour">hour</div>
-                </li>
-                <li class="box-item">
-                    <div class="box_item_title">Month</div>
-                    <div class="box_item_inputhour">120</div>
-                    <div class="box_item_hour">hour</div>
-                </li>
-                <li class="box-item">
-                    <div class="box_item_title">Total</div>
-                    <div class="box_item_inputhour">1348</div>
-                    <div class="box_item_hour">hour</div>
-                </li>
-            </ul>
-            <!-- 棒グラフ -->
-            <div class="box2">
-                <canvas class="bar_graph" id="my_bar_chart"></canvas>
+        <!-- <div class="tofixed-wrapper"> -->
+            <div class="box-wrapper1">
+                <ul class="box1">
+                    <li class="box-item">
+                        <div class="box_item_title">Today</div>
+                        <div class="box_item_inputhour">3</div>
+                        <div class="box_item_hour">hour</div>
+                    </li>
+                    <li class="box-item">
+                        <div class="box_item_title">Month</div>
+                        <div class="box_item_inputhour">120</div>
+                        <div class="box_item_hour">hour</div>
+                    </li>
+                    <li class="box-item">
+                        <div class="box_item_title">Total</div>
+                        <div class="box_item_inputhour">1348</div>
+                        <div class="box_item_hour">hour</div>
+                    </li>
+                </ul>
+                <!-- 棒グラフ -->
+                <div class="box2">
+                    <canvas class="bar_graph" id="my_bar_chart"></canvas>
+                </div>
             </div>
-        </div>
-        <div class="box-wrapper2">
-            <div class="box3">
-                <h2>学習言語</h2>
-                <div id="myChart2" class="myChart2"></div>
-            </div>
-            <div class="box3">
-                <h2>学習コンテンツ</h2>
-                <div id="myChart3" class="myChart3"></div>
+            <div class="box-wrapper2">
+                <div class="box3">
+                    <h2>学習言語</h2>
+                    <div id="myChart2" class="myChart2"></div>
+                </div>
+                <div class="box3">
+                    <h2>学習コンテンツ</h2>
+                    <div id="myChart3" class="myChart3"></div>
+                </div>
             </div>
         </div>
     </main>
@@ -166,11 +171,10 @@
         <div class="date">2020年 10月</div>
         <div class="arrow_right"></div>
     </div>
-
+    
 </body>
 
 <script src="./jquery-3.6.1.min (1).js"></script>
 <script src="./script/webapp.js"></script>
-
 
 </html>
