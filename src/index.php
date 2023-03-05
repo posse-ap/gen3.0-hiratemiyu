@@ -1,3 +1,49 @@
+<?php
+$dsn = 'mysql:dbname=webapp;host=db';
+$user = 'root';
+$password = 'root';
+
+$dbh = new PDO($dsn, $user, $password);
+
+// CREATE TABLE webapp.studies
+// (   created_at DATE ,
+//     study_hour INT,
+//     content VARCHAR(255),
+//     study_language VARCHAR(255));
+
+$month = $dbh->query("SELECT date_format(created_at,'%Y %m') as 月ごとの学習時間 ,SUM(study_hour) FROM studies  group by 月ごとの学習時間")->fetchAll(PDO::FETCH_ASSOC);
+$year = $dbh->query("SELECT date_format(created_at,'%Y') as 年ごとの学習時間 ,SUM(study_hour)  FROM studies  group by 年ごとの学習時間")->fetchAll(PDO::FETCH_ASSOC);
+$all = $dbh->query("SELECT SUM(study_hour) as 合計時間 FROM studies")->fetchAll(PDO::FETCH_ASSOC);
+
+    // 日ごとの時間を表示
+    class Study {
+        public $day;
+        public $hours;
+    
+        public function get_day() {
+            return $this->day;
+        }
+    
+        public function get_hours() {
+            return (int)$this->hours;
+        }
+    }
+
+    $sql = "SELECT DATE_FORMAT(studies.created_at, '%Y-%m-%d') as day, sum(studies.study_hour) as hours FROM studies group by day";
+    $studies = $dbh->query($sql)->fetchAll(\PDO::FETCH_CLASS, Study::class);
+    $formatted_study_data = array_map(function($study) {
+        return [$study->get_day(), $study->get_hours()];
+    }, $studies);
+    $chart_data = json_encode($formatted_study_data);
+
+// print_r($month);
+// print_r($year);
+// print_r($all);
+// print_r($chart_data);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -6,21 +52,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
     <!-- googlFonts読み込み -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">  
-    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/reset.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous" defer></script>    
+    <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" defer></script>
+    <!-- <script src="../script/webapp" defer></script> -->
 </head>
 
 <body>
     <header class="header">
         <div class="header_item">
             <div class="header_logo">
-                <img class="header_logo_img" src="./img/logo.svg" alt="POSSE">
+                <img class="header_logo_img" src="../img/logo.svg" alt="POSSE">
             </div>
             <div class="header_week">4th week</div>
             <div class="header_btn_box">
@@ -38,7 +86,7 @@
     
                         <!-- complete -->
                         <div class="complete-box" id="completebox">
-                            <div class="cpmplete-mark"><img src="./img/チェックポイントのアイコン 1.png" class="complete-mark_img"
+                            <div class="complete-mark"><img src="./img/チェックポイントのアイコン 1.png" class="complete-mark_img"
                                     alt="alt"></div>
                             <div class="complete-message">記録・投稿<br>完了しました</div>
                         </div>
@@ -82,7 +130,7 @@
                                 </div>
                                 <div class="modal_title">Twitter用コメント
                                     <div>
-                                        <textarea id="twitter_comment" name="Twitter_commnet" rows="10"
+                                        <textarea id="twitter_comment" name="Twitter_comment" rows="10"
                                             cols="30"></textarea>
                                     </div>
                                     <input id="checkbox_share" type="checkbox" name="checkbox">Twitterにシェアする
@@ -171,10 +219,7 @@
         <div class="date">2020年 10月</div>
         <div class="arrow_right"></div>
     </div>
-    
 </body>
 
-<script src="./jquery-3.6.1.min (1).js"></script>
-<script src="./script/webapp.js"></script>
-
 </html>
+
