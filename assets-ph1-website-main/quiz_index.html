@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITクイズ</title>
+    <link rel="stylesheet" href="./styles/quiz.css">
+    <link rel="stylesheet" href="./styles/font.css">
+</head>
+
+<body>
+    <header class="l-header p-header">
+        <div class="posselogo">
+            <img class="POSSElogo" src="./img/logo.svg" alt="POSSE">
+        </div>
+        <nav class="p-header_nav">
+            <!-- ハイパーリンクのとこ不安 -->
+            <ul class="p-header_nav_list">
+                <li class="p-header_nav_item">
+                    <a href="#aboutposse" class="p-header_nav_item_link">POSSEとは</a>
+                </li>
+                <li class="p-header_nav_item">
+                    <a href="./quiz" class="p-header_nav_item_link">クイズ</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="p-header_sns p-sns">
+            <li class="p-sns_item">
+                <!-- a要素に target="" を追加すると、リンク先の文書をどのフレーム（ウィンドウ）に表示するかを指定できます 
+                target="_blank"は違うウィンドウで開くという意味-->
+                <!-- rel="noreferrer"を設定することで、リンク先に対して参照元のリンク情報を渡さないようにすることができます。 -->
+                <!-- aria-label 属性は、現在の要素にラベル付けする文字列を定義するために使用されます。 これはテキストラベルが画面に表示されない場合に使用します。 -->
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <!-- 「I」とはフォント（文字）をイタリック体にするためのタグで、<i>～</i>のタグで囲まれたテキストはイタリック体になります。
+                        <i> は HTML の要素で、何らかの理由で他のテキストと区別されるテキストの範囲を表します。　 -->
+                    <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="p-sns_item">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    
+    <div class="quiz-top">
+        <img class="quiz-top_img" src="./img/quiz/bg-hero.jpg" alt="quiz-top_cover">
+        <div class="quiz-top_subtitle">POSSE課題</div>
+        <div class="quiz-top_title">ITクイズ</div>
+    </div>
+
+    <div class="p-quiz_container">
+        <div class="quiz-question1">
+            <div class="quiz-question1-subheading">
+                <h2 class="Q1">Q1</h2>
+            </div>
+            <div class="quiz-question1_text">
+                日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか
+            </div>
+            <img class="quiz-question1_img" src="./img/quiz/img-quiz01.png" alt="Q1_img">
+            <div  class="quiz-answer1_subheading">
+                <p  class="question1-A">A</p>
+            </div>
+            <div  class="quiz-answer1_choices" id="Q1_choices" >
+                <span class="quiz-answer1_choice1" id="Q1_incorrect_1">
+                    <p  class="quiz-answer1_choice_text">約28万人</p>
+                    <i class="u-icon__arrow"></i>
+                </span>
+                <span class="quiz-answer1_choice2" id="Q1_correct">
+                    <p  class="quiz-answer1_choice_text">約79万人</p>
+                    <i class="u-icon__arrow"></i>
+                </span>
+                <span class="quiz-answer1_choice3" id="Q1_incorrect_2">
+                    <p class="quiz-answer1_choice_text">約183万人</p>
+                    <i class="u-icon__arrow"></i>
+                </span>
+            </div>
+
+            <div class="correctbox" id="correctbox" >
+                <p class="correctbox_title">
+                    正解！
+                </p>
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A </p>
+                    <p class="correctbox_text">約79万人</p>
+                </div>
+            </div> 
+
+            <div class="incorrectbox" id="incorrectbox">
+                <p class="incorrectbox_title">不正解...</p>
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A</p>
+                    <p class="correctbox_text">約79万人</p>
+                </div>
+            </div>
+
+            <div class="quiz-question1_copyright">
+                <p class="quiz-question1_copyright_text"> 経済産業省2019年3月ーIT人材需給に関する調査
+                </p>
+            </div>
+        </div>
+
+        <div class="quiz-question2">
+            <div class="quiz-question2-subheading">
+                <h2 class="Q2">Q2</h2>
+            </div>
+            <div class="quiz-question2_text">
+                既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？
+            </div>
+            <img class="quiz-question2_img" src="./img/quiz/img-quiz02.png" alt="Q2_img">
+            <div class="quiz-answer2_subheading">
+                <p class="question2-A">A</p>
+            </div>
+            <div class="quiz-answer2_choices">
+                <div class="quiz-answer2_choice1">
+                    <span class="quiz-answer2_choice_text" id="Q2_incorrect">INTECH</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer2_choice2">
+                    <span class="quiz-answer1_choice_text" id="Q2_incorrect">BIZZTECH</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer2_choice3">
+                    <span class="quiz-answer1_choice_text" id="Q2_correct">X-TECH</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- correctbox -->
+            <div class="correctbox" id="Q2_correctbox" >
+                <p class="correctbox_title">
+                    正解！
+                </p>
+                <div class="correctbox_content">
+                    <p class="correctbox_label">A </p>
+                    <p class="correctbox_text">X-TECH</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question3-subheading">
+                <h2 class="Q3">Q3</h2>
+            </div>
+            <div class="quiz-question3_text">
+                IoTとは何の略でしょう？
+            </div>
+            <img class="quiz-question3_img" src="./img/quiz/img-quiz03.png" alt="Q3_img">
+            <div class="quiz-answer3_subheading">
+                <p class="question3-A">A</p>
+            </div>
+            <div class="quiz-answer3_choices">
+                <div class="quiz-answer3_choice1">
+                    <span class="quiz-answer3_choice_text" id="Q1_correct">Internet of things</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer3_choice2">
+                    <span class="quiz-answer3_choice_text">Integrate into Technology</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer3_choice3">
+                    <span class="quiz-answer3_choice_text">Information on Tool</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- <div class="quiz-answer3_correct" hidden id="Q2_correctbox">
+                    <p class="quiz-answer3_correct_text">
+                        正解！
+                    </p> -->
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question4-subheading">
+                <h2 class="Q4">Q4</h2>
+            </div>
+            <div class="quiz-question4_text">
+                日本が目指すサイバー空間とフィジカル空間を高度に融合させたシステムによって開かれる未来社会のことをなんと言うでしょうか？
+            </div>
+            <img class="quiz-question4_img" src="./img/quiz/img-quiz04.png" alt="Q3_img">
+            <div class="quiz-answer4_subheading">
+                <p class="question4-A">A</p>
+            </div>
+            <div class="quiz-answer4_choices">
+                <div class="quiz-answer4_choice1">
+                    <span class="quiz-answer4_choice_text" id="Q1_correct">Society 5.0</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer4_choice2">
+                    <span class="quiz-answer4_choice_text">CyPhy</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer4_choice3">
+                    <span class="quiz-answer3_choice_text">SDGs</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <div class="quiz-question4_copyright">
+                <p class="quiz-question1_copyright_text"> Society5.0-科学技術-内閣府
+                </p>
+            </div>
+        </div>
+
+        <div class="quiz-questions">
+            <div class="quiz-question5-subheading">
+                <h2 class="Q5">Q5</h2>
+            </div>
+            <div class="quiz-question5_text">
+                イギリスのコンピューター科学者であるギャビン・ウッド氏が提唱した、ブロックチェーン技術を活用した「次世代分数型インターネット」のことをなんと言うでしょう？
+            </div>
+            <img class="quiz-question5_img" src="./img/quiz/img-quiz05.png" alt="Q5_img">
+            <div class="quiz-answer5_subheading">
+                <p class="question5-A">A</p>
+            </div>
+            <div class="quiz-answer5_choices">
+                <div class="quiz-answer5_choice1">
+                    <span class="quiz-answer5_choice_text" id="Q1_correct">Web 3.0</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer5_choice2">
+                    <span class="quiz-answer5_choice_text">NFT</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+                <div class="quiz-answer5_choice3">
+                    <span class="quiz-answer5_choice_text">メタバース</span>
+                    <i class="u-icon__arrow"></i>
+                </div>
+            </div>
+            <!-- <div class="quiz-answer5_correct" hidden id="Q5_correctbox">
+                            <p class="quiz-answer5_correct_text">
+                                正解！
+                            </p>
+                        </div> -->
+            <div class="quiz-question5_copyright">
+                <p class="quiz-question5_copyright_text"> Society5.0-科学技術-内閣府
+                </p>
+            </div>
+
+            <div class="quiz-questions">
+                <div class="quiz-question6-subheading">
+                    <h2 class="Q6">Q6</h2>
+                </div>
+                <div class="quiz-question6_text">
+                    先進テクノロジー活用企業と出遅れた企業の収益性の差はどれくらいあると言われているでしょうか？
+                </div>
+                <img class="quiz-question6_img" src="./img/quiz/img-quiz06.png" alt="Q6_img">
+                <div class="quiz-answer6_subheading">
+                    <span class="question6-A">A</span>
+                </div>
+                <div class="quiz-answer6_choices">
+                    <div class="quiz-answer6_choice1">
+                        <span class="quiz-answer6_choice_text" id="Q6_correct">約2倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                    <div class="quiz-answer6_choice2">
+                        <span class="quiz-answer6_choice_text">約5倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                    <div class="quiz-answer6_choice3">
+                        <span class="quiz-answer6_choice_text">約11倍</span>
+                        <i class="u-icon__arrow"></i>
+                    </div>
+                </div>
+                <div class="quiz-question6_copyright">
+                    <span class="quiz-question6_copyright_text"> Accenture Technology Vision 2021
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="p-line_img">
+            <img class="p-line_img" src="./img/bg-line.jpg" alt="LINEimg">
+            <div class="p-line_cover">     
+                <div class="p-line_icon_back">
+                    <div class="p-line_icon">
+                    <img src="./img/icon/icon-line.svg" alt="LINEicon">
+                    </div>
+                </div>
+                <div class="p-line_title">
+                    <h2>POSSE 公式LINE</h2>
+                </div>
+                <div class="p-line_content">
+                    <p> 公式LINEにてご質問を随時受け付けております
+                        <br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせいたしますので
+                        <br>下記ボタンより友達追加をお願いします
+                    </p>
+                </div>
+                <div class="p-line_button_frame">
+                    <div class="p-line_button_message">
+                        <p>LINE追加</p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <footer>
+        <div class="p-footer">
+            <div class="p-footer_logo">
+            <img src="./img/logo.svg" alt="p-logo">
+            </div>
+            <div class="p-footer_official">
+            <p class="p-footer_official_text">POSSE公式サイト</p>
+            </div>
+            <ul class="p-footer_sns p-sns">
+            <li class="p-sns_item">
+                <a href="https://twitter.com/posse_program" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Twitter">
+                    <i class="u-icon_twitter"></i>
+                </a>
+            </li>
+            <li class="p-sns_item">
+                <a href="https://www.instagram.com/posse_programming/" target="_blank" rel="noopener noreferrer"
+                    class="p-sns_item_link" aria-label="Instagram">
+                    <i class="u-icon_instagram"></i>
+                </a>
+            </li>
+            </ul>
+            <div class="p-copyright">
+                <p class="p-copyright_text">
+                    @2022 POSSE
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="p-banner">
+        <div class="p-banner_icon_back">
+            <div class="p-banner_icon">
+            <img src="./img/icon/icon-line.svg" alt="LINE">
+            </div>
+        </div>
+        <div class="p-banner_content">
+            <p class="p-banner_text">
+                POSSE公式LINEで
+                <br>最新情報をGET!
+            </p>
+            <i class="u-icon_link">
+            </i> 
+        </div>
+    </div>
+    <script src="./js/quiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,561 @@
+/* headerの中身をどうするか、pは使いまわししない、nは使いまわす */
+.p-header {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    padding: 15px 24px;
+
+}
+
+/* headerのlayout(位置)を決めている */
+.l-header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/* class名1つでも良いけど、2つあると分かりやすい l,pは使い方が決まっている */
+
+/* behore after 新人ハッカソンで出てきた文字の下にライン引くやつはこれでできる */
+*,
+::before,
+::after {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+}
+
+.p-header_logo {
+    width: 148px;
+}
+
+.POSSElogo {
+    max-width: 100%;
+}
+
+.p-header_nav {
+    margin-left: auto;
+}
+
+.p-header_nav_list {
+    display: flex;
+    gap: 32px;
+}
+
+.p-header_nav_item_link {
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-header_sns {
+    margin-left: 32px;
+}
+
+/* borderはHTMLの部品に枠線を引くためのcssのプロパティの一つです。
+solid	1本線
+フレックスアイテムの主軸方向の揃え位置を指定する
+justify-content フレックスアイテムの主軸方向の揃え位置を指定する
+                主軸方向の中央揃えで表示*/
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+/* これいる？？？？？ */
+i {
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    /* 通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。
+        「Arial」「Vernada」「ヒラギノ角ゴPro W3」「ＭＳ Ｐゴシック」などがフォントファミリー名です。
+       !importantは一言でいえば、合わせて使用したプロパティを最優先で使用することにする命令です。 */
+    font-family: "posse-icon" !important;
+    font-style: normal;
+    font-variant: normal;
+    font-variant-ligatures: discretionary-ligatures;
+    font-weight: normal;
+    /* letter-spacing: 字間 */
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+}
+
+/* なぜtramsparent */
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* beforeで要素を前に出すことで見えるようにする */
+.u-icon_twitter::before {
+    content: "\ea96";
+}
+
+.u-icon_instagram::before {
+    content: "\ea92";
+}
+
+.p-top {
+    /* Rectangle 1 */
+    position: absolute;
+    width: 1440px;
+    height: 680px;
+    left: 0px;
+    top: 0px;
+    /* light */
+    background: #FFFFFF;
+}
+
+.p-top_img {
+    position: absolute;
+    width: 976px;
+    height: 680px;
+    right: 0px;
+    top: 40px;
+    background: url(IMG_3763.jpg);
+    border-radius: 80px 0px 0px 80px;
+}
+
+.p-top_slogan {
+    position: absolute;
+    width: 500px;
+    height: 281px;
+    left: 80px;
+    top: 198px;
+    right: 0%;
+    /* primary-light */
+    background: #EFF2F5;
+    border-radius: 24px;
+}
+
+.p-top_slogan_title {
+    /* 学生プログラミングコミュニティ POSSE（ポッセ） */
+    position: absolute;
+    width: 376px;
+    height: 29px;
+    left: 75px;
+    top: 15px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 180%;
+    /* identical to box height, or 29px */
+    /* primary */
+    color: #0071BC;
+}
+
+.p-top_slogan_text {
+    /* 自分史上最高 を仲間と。 */
+    position: absolute;
+    width: 450px;
+    height: 160px;
+    left: 50px;
+    top: 20px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 80px;
+    /* or 133% */
+
+    letter-spacing: 0.05em;
+
+    /* dark */
+
+    color: #333333;
+
+}
+
+
+
+.scrolldown {
+    /* Scoroll Down */
+    position: absolute;
+    width: 88px;
+    height: 21px;
+    left: 126px;
+    bottom: 24px;
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+    /* dark */
+    color: #333333;
+}
+
+
+.p-about {
+    /* POSSEとは */
+    position: absolute;
+    width: 191px;
+    height: 54px;
+    top: 850px;
+    left: 700px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+    text-align: center;
+
+    /* dark */
+
+    color: #333333;
+}
+
+.p-aboutEN {
+    /*  About POSSE */
+    position: absolute;
+    width: 93px;
+    height: 25px;
+    left: calc(50% - 93px/2);
+    top: 62px;
+
+    /* subtitle */
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    text-align: center;
+
+    /* primary */
+
+    color: #0071BC;
+}
+
+.p-about_img {
+    /* img */
+    position: relative;
+    top: 50px;
+    left: -250px;
+    width: 472px;
+    height: 312px;
+    background: url(IMG_3569_polarr.jpg);
+    border-radius: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.p-about_text {
+    position: relative;
+    top: -200px;
+    left: 100px;
+    width: 472px;
+    height: 175px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    text-align: justify;
+
+    /* dark */
+
+    color: #333333;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* p-line */
+
+.p-line_cover {
+    /* Rectangle 9 */
+    position: absolute;
+    width: 984px;
+    height: 357px;
+    left: 250px;
+    right: 200px;
+    top: 1500px;
+    bottom: 0.28%;
+    /* primary */
+    background: rgba(0,113,188,0.8) ;
+    mix-blend-mode: normal;
+    border-radius: 48px;
+}
+
+.p-line_img {
+    position: absolute;
+    width: 984px;
+    height: 357px;
+    left: 125px;
+    right: 200px;
+    top: 750px;
+    bottom: 0.28%;
+    border-radius: 48px;
+}
+
+
+.p-line_icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    right: 62.7%;
+    top: -3px;
+    bottom: 66.2%;
+
+}
+
+.p-line_icon_back{
+    position: relative;
+    width: 40px;
+    height: 38px;
+    left: 160px;
+    right: 62.7%;
+    top: 90px;
+    bottom: 66.2%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.p-line_title {
+    position: relative;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 180%;
+    /* identical to box height, or 65px */
+
+    text-align: center;
+
+    /* light */
+
+    color: #FFFFFF;
+}
+
+
+.p-line_content {
+    position: absolute;
+    left: 22.87%;
+    right: 22.76%;
+    top: 41.62%;
+    bottom: 39.94%;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* /* or 22px * */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* /* light * */
+    color: #FFFFFF;
+}
+
+
+.p-line_button_frame {
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: 300px;
+    top: 270px;
+
+    /* light */
+    background: #FFFFFF;
+    border-radius: 98px;
+}
+
+.p-line_button_message {
+    position: absolute;
+    width: 77px;
+    height: 23.39px;
+    left: 120px;
+    top: 13.9px;
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    /* /* gray-dark  */
+    color: #666666;
+}
+
+/* footer */
+.p-footer {
+    position: relative;
+    margin-top: 2000px;
+    border-top: 1px solid #adadad;
+    width: 100%;
+
+}
+
+.p-footer_logo {
+    margin-top: 40px;
+    margin-left: 600px;
+
+}
+
+.p-footer_official {
+    position: relative;
+    margin-top: 10px;
+    margin-left: -1600px;
+    /* POSSE 公式サイト */
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    text-align: center;
+
+    /* gray-dark */
+
+    color: #666666;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.p-sns {
+    display: flex;
+    gap: 16px;
+}
+
+.p-footer_sns {
+    margin-left: 610px;
+    margin-top: -20px;
+}
+
+.p-sns_item_link {
+    align-items: center;
+    border: solid 1px #eee;
+    border-radius: 50%;
+    color: #adadad;
+    display: inline-flex;
+    font-size: 24px;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+.p-copyright {
+    width: 100%;
+    margin-top: 35px;
+    margin-left: -10px;
+    ;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 13px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    /* gray-dark */
+
+    color: #666666;
+    border-top: 1px solid #adadad;
+}
+
+.p-banner {
+    position: fixed;
+    width: 288px;
+    height: 80px;
+    right: 16px;
+    bottom: 16px;
+    background: #5FDF5B;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+
+.p-banner_icon_back{
+    position: relative;
+    bottom: 60px;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    
+}
+
+.p-banner_icon {
+    /* icon-line */
+    position: absolute;
+    bottom: 60px;
+    width: 36px;
+    height: 36px;
+    left: 0px;
+    top: -8px;
+    
+}
+
+.p-banner_text {
+    position:absolute ;
+    width: 160px;
+    height: 50px;
+    left: 90px;
+    top: 11px;
+
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 130%;
+    /* or 18px */
+
+    letter-spacing: 0.14em;
+
+    color: #FFFFFF;
+}
