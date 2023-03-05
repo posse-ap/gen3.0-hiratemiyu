@@ -1,0 +1,544 @@
+body {
+    background-color: #EEEEEE;
+}
+
+/* header */
+
+.header {
+    height: 64px;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+}
+
+.header_item {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo_img {
+    height: 30px;
+}
+
+.header_week {
+    font-size: 15px;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #33ccff;
+}
+
+/* ボタン */
+
+.header_btn_box {
+    display: flex;
+    margin-left: auto;
+    margin-top: auto;
+
+}
+
+.header_btn {
+    color: aliceblue;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, blue, #33ccff);
+    border-radius: 10px;
+    padding: 5px 30px;
+    margin-bottom: 15%;
+    box-shadow: 0 10px 10px 0 #a5e5fb;
+    cursor: pointer;
+
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 20% auto;
+    max-width: 900px;
+    height: 540px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    position: relative;
+    border-radius: 10px;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.modalClose {
+    font-size: 2rem;
+    position: absolute;
+    right: 0px;
+}
+
+.modalClose:hover {
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 30px 30px;
+    color: black;
+
+}
+
+.modal_both {
+    display: grid;
+    /* justify-content: center;
+    align-items: center; */
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.modal_left {
+    margin-left: 5%;
+}
+
+.modal_right {
+    margin-right: 0px;
+
+}
+
+.modal_title {
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: fit-content;
+}
+
+.header_btn.modal_btn {
+    display: block;
+    margin: 20px auto;
+}
+
+/* カレンダー */
+.calender{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    /* border: 2px solid #eee; */
+}
+
+thead,
+tfoot {
+    /* background: #eee; */
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+    line-height: 2em;
+}
+
+tbody td:first-child {
+    color: red;
+}
+
+tbody td:last-child {
+    color: blue;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+td.disabled {
+    opacity: 0.3;
+}
+
+td.today {
+    font-weight: bold;
+    background-color: #33ccff;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+#prev,
+#next,
+#today {
+    cursor: pointer;
+    user-select: none;
+
+}
+
+#check{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: aliceblue;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, blue, #33ccff);
+    border-radius: 10px;
+    padding: 5px 30px;
+    /* margin-bottom: 15%; */
+    box-shadow: 0 10px 10px 0 #a5e5fb;
+    cursor: pointer;
+    margin:20px auto;
+    width: 30%;
+}
+
+/* main */
+.container {
+    /* position: relative;
+    position: fixed;
+    place-items: center; */
+    max-width: 1100px;
+    /* margin: 10px ; */
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #EEEEEE;
+    position: fixed;
+    place-items: center;
+    margin-left: 6.1rem;
+    margin-top: 2rem;
+}
+
+
+.box1,
+.box2,
+.box3 {
+    border-radius: 10px;
+}
+
+.box-wrapper1 {
+    display: grid;
+    gap: 20px;
+}
+
+.box1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+
+.box-item {
+    background-color: white;
+    list-style: none;
+    padding: 1rem;
+}
+
+.box2 {
+    background-color: white;
+    height: 320px;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+}
+
+/* 棒グラフ */
+#canvas {
+    display: inline-block;
+    width: 100%;
+
+}
+
+.box-wrapper2 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    height: 520px;
+}
+
+.bar_graph {
+    height: 350px;
+    width: 680px;
+}
+
+.box3 {
+    background-color: white;
+    height: 520px;
+    width: 250px;
+}
+
+.box_item_title {
+    color: #33ccff;
+    text-align: center;
+}
+
+.box_item_inputhour {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.box_item_hour {
+    color: #a5e5fb;
+    text-align: center;
+    /* margin-top: 1rem; */
+}
+
+/* DATE */
+.date_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40rem;
+}
+
+.arrow_left {
+    border-bottom: solid 2px #33ccff;
+    border-left: solid 2px #33ccff;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+}
+
+.arrow_right {
+    border-top: solid 2px #33ccff;
+    border-right: solid 2px #33ccff;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+}
+
+/* KEYFRAMES */
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes spin3D {
+    from {
+        transform: rotate3d(.5, .5, .5, 360deg);
+    }
+
+    to {
+        transform: rotate3d(0deg);
+    }
+}
+
+@keyframes configure-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes configure-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-135deg);
+    }
+
+    75% {
+        transform: rotate(-225deg);
+    }
+
+    100% {
+        transform: rotate(-315deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: .25;
+        transform: scale(.75);
+    }
+}
+
+
+
+/* ALTERNATING ORBITS */
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 0 auto;
+    padding-top: 100px;
+
+}
+
+.circle-border {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgb(63, 249, 220);
+    background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgba(63, 249, 220, 1) 100%);
+    animation: spin .8s linear 0s infinite;
+}
+
+.circle-core {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* complete */
+.complete-box {
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.complete-mark_img {
+    width: 150px;
+    height: 150px;
+    padding-top: 50px;
+}
+
+/* 円グラフ */
+.myChart2,
+.myChart3 {
+    width: 50vw;
+    height: 100vh;
+}
+
+
+@media screen and (max-width: 479px) {
+    /* 479px以下用（スマートフォン用）の記述 */
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 30px;
+    }   
+
+    .box1{
+        width: 20px;
+    }
+
+    .box-item{
+        width: 100px;
+        text-align: center;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    .box_item_inputhour{
+        font-size: 30px;
+    }   
+    
+    .box-wrapper2{
+        height: 200px;
+    }
+
+    .box2{
+        height: 200px;
+        width: 340px;
+    }
+
+    .box3 {
+        background-color: white;
+        height: 370px;
+        width: 160px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .date_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12em;
+    }
+
+    .modal_both{
+        display: flex;
+        gap: 20px;
+    }
+
+    .modal_left{
+        width: 200px;
+    }
+
+    .modal_right{
+        width: 150px;
+    }
+
+    #date,#text{
+        width: 150px;
+    }
+}
