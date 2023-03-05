@@ -41,7 +41,7 @@ $all = $dbh->query("SELECT SUM(study_hour) as 合計時間 FROM studies")->fetch
 // print_r($all);
 // print_r($chart_data);
 
-?>
+?> 
 
 
 <!DOCTYPE html>
@@ -56,12 +56,12 @@ $all = $dbh->query("SELECT SUM(study_hour) as 合計時間 FROM studies")->fetch
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="../css/reset.css"> 
+    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/reset.css"> 
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous" defer></script>    
     <script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" defer></script>
-    <!-- <script src="../script/webapp" defer></script> -->
+    <script src="./script/webapp.js" defer></script>
 </head>
 
 <body>
@@ -98,7 +98,7 @@ $all = $dbh->query("SELECT SUM(study_hour) as 合計時間 FROM studies")->fetch
                             <div class="modal_left">
                                 <div class="modal_title">学習日</div>
                                 <input type="text" name="date" id="date">
-                                <div class="modal_title">学習コンテンツ（複数選択可)</div>
+                                <div class="modal_title">学習コンテンツ（複数選択可</div>
                                 <div class="checkboxes">
                                     <input type="checkbox"> N予備校
                                     <input type="checkbox">ドットインストール
